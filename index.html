@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Feeling Safe, Exposed Online</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: a night-desk briefing. Header; the world map beside a control column
+   (interactive 3×3 legend, search, country card); the scatter plot below explains each class. Single dark look by design. */
+:root {
+  --night: #0f1724;      /* page */
+  --panel: #162133;      /* panels */
+  --line: #2a3a52;       /* hairlines */
+  --text: #e8edf3;       /* text */
+  --muted: #9aa8b9;      /* secondary */
+  --nodata: #2c3748;     /* countries without both values */
+  --focus: #ffd166;      /* selection and focus */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--night); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.5; margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 40px;
+}
+.wrap { max-width: 1200px; margin: 0 auto; display: grid; gap: 18px; }
+header .kicker { font-family: var(--font-data); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+header h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 4.6vw, 48px); line-height: 1.05; margin: 6px 0 8px; text-wrap: balance; }
+header p { margin: 0; max-width: 70ch; color: var(--muted); }
+.main { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 900px) { .main { grid-template-columns: 1fr; } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
+.mapbox { position: relative; min-width: 0; padding: 6px; }
+#map { display: block; width: 100%; height: auto; }
+.side { display: grid; gap: 14px; min-width: 0; }
+.legendbox { padding: 14px 16px; display: grid; gap: 10px; }
+h3 { font-family: var(--font-data); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; font-weight: 400; }
+.legend { display: grid; grid-template-columns: auto 1fr; gap: 6px 8px; align-items: center; }
+.yaxis { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; color: var(--muted); text-align: center; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 230px; }
+.cell { aspect-ratio: 1; border: 2px solid transparent; border-radius: 3px; cursor: pointer; padding: 0; display: grid; place-items: center;
+  font: 700 12px var(--font-data); color: rgb(15 23 36 / .75); }
+.cell[aria-pressed="true"] { border-color: var(--focus); }
+.cell:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.xaxis { grid-column: 2; font-size: 12px; color: var(--muted); max-width: 230px; display: flex; justify-content: space-between; }
+.hint { font-size: 13px; color: var(--muted); margin: 0; }
+.searchbox { padding: 12px 14px; display: grid; gap: 6px; }
+label { font-size: 13px; color: var(--muted); }
+input[type=search] { width: 100%; font: 15px var(--font-body); color: var(--text); background: var(--night); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+.card { padding: 14px 16px; display: grid; gap: 8px; min-height: 172px; }
+.card h2 { font-family: var(--font-display); font-weight: 500; font-size: 26px; line-height: 1.15; margin: 0; }
+.card .cls { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.card .sw { width: 16px; height: 16px; border-radius: 3px; flex: none; }
+.card dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; margin: 0; font-size: 14px; }
+.card dt { color: var(--muted); }
+.card dd { margin: 0; font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.scatterbox { padding: 12px 14px; display: grid; gap: 6px; }
+#scatter { display: block; width: 100%; height: auto; }
+.notes { padding: 14px 16px; font-size: 13px; color: var(--muted); display: grid; gap: 6px; }
+.notes p { margin: 0; max-width: 95ch; }
+.tip { position: absolute; pointer-events: none; background: #f2f5f8; color: #0f1724; font-size: 12px; padding: 6px 8px; border-radius: 4px; max-width: 240px; z-index: 5; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.tabs button { font: 700 14px var(--font-body); color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--text); color: var(--night); border-color: var(--text); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">#30DayMapChallenge 2026 · Bivariate · cyber-dependent crime</div>
+    <h1 id="title">Feeling Safe, Exposed Online</h1>
+    <p>How safe people feel walking alone at night where they live, set against how strong the market for cyber-dependent crime is in their country. A street can feel safe while hacking and ransomware thrive behind the screens. Switch to the second layer to compare cyber crime with resilience instead. Tap a square in the legend to see one group, or find a country.</p>
+    <div class="tabs" role="tablist" aria-label="Layer">
+      <button type="button" role="tab" id="tab-feelsafe" data-key="feelsafe" aria-selected="true">Feeling safe at night</button>
+      <button type="button" role="tab" id="tab-resilience" data-key="resilience" aria-selected="false">Resilience</button>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="panel mapbox"><svg id="map" role="img" aria-label="World map coloured by bivariate class"></svg></div>
+    <div class="side">
+      <section class="panel legendbox" aria-label="Legend and filter">
+        <h3>Legend · tap a square to filter</h3>
+        <div class="legend">
+          <div class="yaxis" id="ylab"></div>
+          <div class="grid" id="grid"></div>
+          <div class="xaxis"><span>Low</span><span id="xlab"></span><span>High</span></div>
+        </div>
+        <p class="hint" id="hint">Showing all countries.</p>
+        <p class="hint" id="cover"></p>
+      </section>
+      <section class="panel searchbox">
+        <label for="q">Find a country</label>
+        <input id="q" type="search" list="names" placeholder="Type a country name" autocomplete="off">
+        <datalist id="names"></datalist>
+      </section>
+      <article class="panel card" id="card" aria-live="polite"></article>
+    </div>
+  </div>
+
+  <section class="panel scatterbox" aria-label="Scatter plot">
+    <h3>Every country on both scales · dashed lines are the class breaks</h3>
+    <svg id="scatter" role="img" aria-label="Scatter plot of the two indicators"></svg>
+  </section>
+
+  <section class="panel notes">
+    <p id="src"></p>
+    <p><strong>What “cyber-dependent crime” means.</strong> In the GI-TOC index these are crimes that can only exist because of computers and networks, where the technology is both the tool and the target: hacking and data theft, ransomware, malware and botnets, and attacks that knock websites offline (DDoS). They differ from cyber-enabled crimes, such as online scams or selling drugs on the internet, which GI-TOC scores under other markets. The score (1–10) is an expert assessment of how large and harmful this criminal market is in or from each country. It is not a count of attacks or victims, so a high score can mean a country is a base for cyber criminals as much as a place whose people are targeted.</p>
+    <p><strong>What “resilience” means.</strong> In the GI-TOC index, resilience is a country’s ability to withstand and disrupt organized crime through its institutions and society. It averages 12 expert-scored indicators (1–10): political leadership and governance, government transparency and accountability, international cooperation, national policies and laws, the judicial system and detention, law enforcement, territorial integrity, anti-money laundering, economic regulatory capacity, victim and witness support, prevention, and the role of non-state actors such as civil society and the media. A high score means strong defenses; it does not measure how much crime there is, or how safe people feel.</p>
+    <p><strong>What “feel safe walking alone at night” means.</strong> Gallup asks adults: “Do you feel safe walking alone at night in the city or area where you live?” The value is the share answering yes (Gallup Global Safety Report 2025). It measures perceived safety on the street, which can differ from both crime levels and institutional strength. A similar question is used for SDG indicator 16.1.4.</p>
+    <p>Classes split each indicator into thirds (terciles) across the countries that have it, as computed by the <code>bivariate</code> 2.0 runs; dashed lines are the class breaks. Ranks: 1 is the highest value; tied values share a rank. In the scatter plot, cyber-crime scores come in half steps, so many countries share the same value; each dot is nudged up or down by a small random amount (up to about ±0.2) so none hides another. Exact values are in the tooltips and the country card. Grey countries lack one or both values. Boundaries: Natural Earth, Equal Earth projection.</p>
+    <p id="runs"></p>
+    <p>Made for the #30DayMapChallenge 2026 · Yanira A. Rivera.</p>
+  </section>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+(async () => {
+  const $ = id => document.getElementById(id);
+  const KEYS = ['feelsafe', 'resilience'];
+  const DS = Object.fromEntries(await Promise.all(KEYS.map(async k => {
+    const [fc, m] = await Promise.all([fetch(`data/${k}/countries.geojson`).then(r => r.json()), fetch(`data/${k}/meta.json`).then(r => r.json())]);
+    return [k, { fc, m }];
+  })));
+  $('runs').textContent = 'Runs: ' + KEYS.map(k => `${DS[k].m.labels.tab} — ${DS[k].m.bivariate_run ? 'bivariate run ' + DS[k].m.bivariate_run.run_id : 'bivariate output (breaks read from its classes)'}, input SHA-256 ${DS[k].m.provenance.input.sha256.slice(0, 12)}…`).join(' · ');
+
+  // shared frame: EPSG:8857 metres drawn as planar coordinates; outline and graticule projected into the same metres
+  const ee = d3.geoEqualEarth().scale(6378137).translate([0, 0]);
+  const toM = ([lon, lat]) => { const [x, y] = ee([lon, lat]); return [x, -y]; };
+  const ring = [];
+  for (let lat = -90; lat <= 90; lat++) ring.push(toM([180, lat]));
+  for (let lat = 90; lat >= -90; lat--) ring.push(toM([-180, lat]));
+  const SPHERE = { type: 'Feature', geometry: { type: 'Polygon', coordinates: [ring] } };
+  const GRAT = { type: 'MultiLineString', coordinates: d3.geoGraticule().step([30, 30])().coordinates.map(l => l.map(toM)) };
+  const W = 960, H = 470;
+  const proj = d3.geoIdentity().reflectY(true).fitExtent([[6, 6], [W - 6, H - 6]], SPHERE);
+  const path = d3.geoPath(proj);
+  const svg = d3.select('#map').attr('viewBox', `0 0 ${W} ${H}`);
+  svg.append('path').datum(SPHERE).attr('d', path).attr('fill', '#111c2c').attr('stroke', '#2a3a52');
+  svg.append('path').datum(GRAT).attr('d', path).attr('fill', 'none').attr('stroke', '#1d2a3e').attr('stroke-width', .5);
+  const gC = svg.append('g');
+  const outline = svg.append('path').attr('fill', 'none').attr('stroke', 'var(--focus)').attr('stroke-width', 1.6).attr('pointer-events', 'none');
+
+  const SW = 1160, SH = 330, mg = { l: 52, r: 16, t: 14, b: 42 };
+  const sc = d3.select('#scatter').attr('viewBox', `0 0 ${SW} ${SH}`);
+  const gAxes = sc.append('g'), gDots = sc.append('g');
+  const word = ['', 'low', 'medium', 'high'];
+  const tip = $('tip');
+
+  let D, countries, dots, filter = null, selectedIso = 'HND';
+  const fmtA = v => D.m.a_unit === '%' ? `${v.toFixed(0)}%` : v.toFixed(2);
+
+  function render(key) {
+    D = DS[key];
+    const L = D.m.labels, PAL = D.m.palette;
+    KEYS.forEach(k => $('tab-' + k).setAttribute('aria-selected', String(k === key)));
+    $('xlab').textContent = `${L.a_short[0].toUpperCase() + L.a_short.slice(1)} →`;
+    $('ylab').textContent = `${L.b} →`;
+    $('src').textContent = `Data: ${L.source}.`;
+    const valid = D.fc.features.filter(f => f.properties.qa === 'VALID');
+    $('cover').textContent = `${valid.length} countries have both values.`;
+
+    // map
+    countries = gC.selectAll('path').data(D.fc.features, f => f.properties.iso3).join('path').attr('d', path)
+      .attr('stroke', '#0f1724').attr('stroke-width', .35)
+      .style('cursor', f => f.properties.qa === 'VALID' ? 'pointer' : 'default');
+    countries.transition().duration(350).attr('fill', f => f.properties.color || 'var(--nodata)');
+
+    // legend
+    const counts = d3.rollup(valid, v => v.length, f => f.properties.cls);
+    const cells = [];
+    for (let cb = 3; cb >= 1; cb--) for (let ca = 1; ca <= 3; ca++) cells.push({ ca, cb, key: `${ca}_${cb}` });
+    d3.select('#grid').selectAll('button').data(cells).join('button').attr('type', 'button').attr('class', 'cell')
+      .style('background', d => PAL[d.key])
+      .attr('aria-label', d => `${word[d.ca]} ${L.a_short}, ${word[d.cb]} ${L.b_short}: ${counts.get(d.key) || 0} countries`)
+      .text(d => counts.get(d.key) || 0)
+      .on('click', (ev, d) => setFilter(filter === d.key ? null : d.key, cells, counts));
+
+    // scatter
+    const aMin = D.m.a_unit === '%' ? 30 : 1, aMax = D.m.a_unit === '%' ? 100 : 9;
+    const x = d3.scaleLinear().domain([aMin, aMax]).range([mg.l, SW - mg.r]);
+    const y = d3.scaleLinear().domain([0.5, 9.5]).range([SH - mg.b, mg.t]);
+    gAxes.selectAll('*').remove();
+    const st = g => g.call(g => g.selectAll('text').attr('fill', '#9aa8b9').attr('font-family', 'JetBrains Mono, monospace').attr('font-size', 11))
+      .call(g => g.selectAll('line,path').attr('stroke', '#2a3a52'));
+    gAxes.append('g').attr('transform', `translate(0,${SH - mg.b})`).call(d3.axisBottom(x).ticks(8).tickFormat(v => D.m.a_unit === '%' ? v + '%' : v)).call(st);
+    gAxes.append('g').attr('transform', `translate(${mg.l},0)`).call(d3.axisLeft(y).ticks(9)).call(st);
+    gAxes.append('text').attr('x', SW - mg.r).attr('y', SH - 6).attr('text-anchor', 'end').attr('fill', '#9aa8b9').attr('font-size', 12).text(`${L.a}${D.m.a_unit ? ' (' + D.m.a_unit + ')' : ''} →`);
+    gAxes.append('text').attr('transform', `translate(14,${mg.t}) rotate(-90)`).attr('text-anchor', 'end').attr('fill', '#9aa8b9').attr('font-size', 12).text(`${L.b} →`);
+    D.m.breaks_a.forEach(b => gAxes.append('line').attr('x1', x(b)).attr('x2', x(b)).attr('y1', mg.t).attr('y2', SH - mg.b).attr('stroke', '#5b6d86').attr('stroke-dasharray', '4 4'));
+    D.m.breaks_b.forEach(b => gAxes.append('line').attr('x1', mg.l).attr('x2', SW - mg.r).attr('y1', y(b)).attr('y2', y(b)).attr('stroke', '#5b6d86').attr('stroke-dasharray', '4 4'));
+    const jit = d3.randomNormal.source(d3.randomLcg(7))(0, 0.09);
+    valid.forEach(f => { f._jy = f.properties.b + jit(); });
+    dots = gDots.selectAll('circle').data(valid, f => f.properties.iso3).join('circle')
+      .attr('fill', f => f.properties.color).attr('stroke', '#0f1724').attr('stroke-width', .6).style('cursor', 'pointer')
+      .attr('r', 3.6).attr('cx', f => x(f.properties.a)).attr('cy', f => y(f._jy));
+
+    // linking
+    const tipOn = (ev, f) => {
+      const p = f.properties; tip.hidden = false;
+      tip.textContent = p.qa === 'VALID' ? `${p.name} · ${L.a_short} ${fmtA(p.a)} · ${L.b_short} ${p.b.toFixed(1)}` : `${p.name} · ${noDataText(p)}`;
+      tip.style.left = (ev.pageX + 12) + 'px'; tip.style.top = (ev.pageY - 32) + 'px';
+    };
+    [countries, dots].forEach(sel => sel.on('mousemove', tipOn).on('mouseleave', () => { tip.hidden = true; }).on('click', (ev, f) => show(f.properties.iso3)));
+    countries.on('mouseenter', (ev, f) => { if (f.properties.qa === 'VALID') show(f.properties.iso3); });
+    dots.on('mouseenter', (ev, f) => show(f.properties.iso3));
+
+    // search list
+    d3.select('#names').selectAll('option').data([...D.fc.features].sort((a, b) => d3.ascending(a.properties.name, b.properties.name)), f => f.properties.iso3)
+      .join('option').attr('value', f => f.properties.name);
+
+    setFilter(null, cells, counts);
+    show(selectedIso);
+  }
+
+  function noDataText(p) {
+    const L = D.m.labels;
+    if (p.qa === 'MISSING_A') return `no ${L.a_short} value`;
+    if (p.qa === 'MISSING_B') return `no ${L.b_short} value`;
+    return 'no data';
+  }
+
+  function setFilter(k, cells, counts) {
+    const L = D.m.labels;
+    filter = k;
+    d3.selectAll('.cell').attr('aria-pressed', d => String(d.key === k));
+    countries.attr('opacity', f => !k || f.properties.cls === k ? 1 : .18);
+    dots.attr('opacity', f => !k || f.properties.cls === k ? 1 : .12);
+    const c = k ? cells.find(x => x.key === k) : null;
+    $('hint').textContent = k ? `Showing ${counts.get(k) || 0} countries with ${word[c.ca]} ${L.a_short} and ${word[c.cb]} ${L.b_short}. Tap the square again to show all.` : 'Showing all countries.';
+  }
+
+  function show(iso) {
+    selectedIso = iso;
+    const f = D.fc.features.find(g => g.properties.iso3 === iso); if (!f) return;
+    const p = f.properties, L = D.m.labels, card = $('card');
+    outline.attr('d', path(f));
+    dots.attr('r', d => d.properties.iso3 === iso ? 6.5 : 3.6).attr('stroke', d => d.properties.iso3 === iso ? 'var(--focus)' : '#0f1724').attr('stroke-width', d => d.properties.iso3 === iso ? 2 : .6);
+    dots.filter(d => d.properties.iso3 === iso).raise();
+    const h = `<h3>Country</h3><h2></h2>`;
+    if (p.qa !== 'VALID') {
+      card.innerHTML = h + `<p class="hint"></p><dl></dl>`;
+      card.querySelector('h2').textContent = p.name;
+      card.querySelector('.hint').textContent = `Not classified: ${noDataText(p)}.`;
+      const dl = card.querySelector('dl');
+      if (p.a != null) dl.innerHTML += `<dt></dt><dd class="va"></dd>`;
+      if (p.b != null) dl.innerHTML += `<dt></dt><dd class="vb"></dd>`;
+      if (p.a != null) { dl.querySelector('.va').previousElementSibling.textContent = L.a; dl.querySelector('.va').textContent = `${fmtA(p.a)} · rank ${p.rank_a} of ${p.n_a}`; }
+      if (p.b != null) { dl.querySelector('.vb').previousElementSibling.textContent = L.b; dl.querySelector('.vb').textContent = `${p.b.toFixed(1)} · rank ${p.rank_b} of ${p.n_b}`; }
+      return;
+    }
+    card.innerHTML = h + `<div class="cls"><span class="sw"></span><span class="ctext"></span></div>
+      <dl><dt class="la"></dt><dd class="va"></dd><dt class="lb"></dt><dd class="vb"></dd></dl>`;
+    card.querySelector('h2').textContent = p.name;
+    card.querySelector('.sw').style.background = p.color;
+    card.querySelector('.ctext').textContent = `${word[p.ca]} ${L.a_short}, ${word[p.cb]} ${L.b_short}`;
+    card.querySelector('.la').textContent = L.a; card.querySelector('.lb').textContent = L.b;
+    card.querySelector('.va').textContent = `${fmtA(p.a)} · rank ${p.rank_a} of ${p.n_a}`;
+    card.querySelector('.vb').textContent = `${p.b.toFixed(1)} · rank ${p.rank_b} of ${p.n_b}`;
+  }
+
+  $('q').addEventListener('input', e => {
+    const f = D.fc.features.find(g => g.properties.name.toLowerCase() === e.target.value.trim().toLowerCase());
+    if (f) show(f.properties.iso3);
+  });
+  KEYS.forEach(k => $('tab-' + k).addEventListener('click', () => render(k)));
+  render('feelsafe');
+})();
+</script>
+
+</body>
+</html>
