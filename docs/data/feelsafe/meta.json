@@ -1,0 +1,122 @@
+{
+ "crs": "EPSG:8857",
+ "labels": {
+  "a": "Feel safe walking alone at night",
+  "b": "Cyber-dependent crime (GI-TOC 2025)",
+  "a_short": "sense of safety",
+  "a_unit": "%",
+  "key": "feelsafe",
+  "tab": "Feeling safe",
+  "b_short": "cyber crime",
+  "source": "A: Gallup, Global Safety Report 2025, share of adults who feel safe walking alone at night in the city or area where they live (https://www.gallup.com/analytics/356996/gallup-global-safety-research-center.aspx). B: Global Initiative Against Transnational Organized Crime (GI-TOC), Global Organized Crime Index 2025 (CC BY 4.0)"
+ },
+ "n_valid": 139,
+ "n_a": 144,
+ "n_b": 193,
+ "a_unit": "%",
+ "breaks_a": [
+  60.0,
+  75.0
+ ],
+ "breaks_b": [
+  3.5,
+  5.5
+ ],
+ "ranges_a": [
+  "< 60",
+  "60 – 75",
+  "≥ 75"
+ ],
+ "ranges_b": [
+  "< 3.5",
+  "3.5 – 5.5",
+  "≥ 5.5"
+ ],
+ "palette": {
+  "1_1": "#e8e8e8",
+  "1_2": "#ace4e4",
+  "1_3": "#5ac8c8",
+  "2_1": "#dfb0d6",
+  "2_2": "#a5add3",
+  "2_3": "#5698b9",
+  "3_1": "#be64ac",
+  "3_2": "#8c62aa",
+  "3_3": "#3b4994"
+ },
+ "bivariate_run": null,
+ "check_breaks_from_data": {
+  "a": [
+   {
+    "between": [
+     1,
+     2
+    ],
+    "upper_of_lower": 59.0,
+    "lower_of_upper": 60.0,
+    "line": 59.5
+   },
+   {
+    "between": [
+     2,
+     3
+    ],
+    "upper_of_lower": 74.0,
+    "lower_of_upper": 75.0,
+    "line": 74.5
+   }
+  ],
+  "b": [
+   {
+    "between": [
+     1,
+     2
+    ],
+    "upper_of_lower": 3.0,
+    "lower_of_upper": 3.5,
+    "line": 3.25
+   },
+   {
+    "between": [
+     2,
+     3
+    ],
+    "upper_of_lower": 5.0,
+    "lower_of_upper": 5.5,
+    "line": 5.25
+   }
+  ]
+ },
+ "provenance": {
+  "script": "biv_web",
+  "version": "0.1.0",
+  "python": "3.13.18",
+  "input": {
+   "file": "data/bivariate_feelsafe.gpkg",
+   "sha256": "25de31821fd9bf8a7aede19e81860ed09189674a05e999daf9364d2287cc2786"
+  },
+  "config": {
+   "input": {
+    "gpkg": "data/bivariate_feelsafe.gpkg",
+    "layer": "bivariate"
+   },
+   "labels": {
+    "a": "Feel safe walking alone at night",
+    "b": "Cyber-dependent crime (GI-TOC 2025)",
+    "a_short": "sense of safety",
+    "a_unit": "%",
+    "key": "feelsafe",
+    "tab": "Feeling safe",
+    "b_short": "cyber crime",
+    "source": "A: Gallup, Global Safety Report 2025, share of adults who feel safe walking alone at night in the city or area where they live (https://www.gallup.com/analytics/356996/gallup-global-safety-research-center.aspx). B: Global Initiative Against Transnational Organized Crime (GI-TOC), Global Organized Crime Index 2025 (CC BY 4.0)"
+   },
+   "geometry": {
+    "simplify_m": 6000,
+    "round_m": 100
+   },
+   "output": {
+    "dir": "docs/data/feelsafe"
+   }
+  },
+  "created_utc": "2026-11-05T10:51:13+00:00"
+ }
+}

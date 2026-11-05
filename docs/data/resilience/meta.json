@@ -1,0 +1,130 @@
+{
+ "crs": "EPSG:8857",
+ "labels": {
+  "a": "Resilience",
+  "b": "Cyber-dependent crime (GI-TOC 2025)",
+  "a_short": "resilience",
+  "a_unit": "",
+  "key": "resilience",
+  "tab": "Resilience",
+  "b_short": "cyber crime",
+  "source": "Global Initiative Against Transnational Organized Crime (GI-TOC), Global Organized Crime Index 2025 (CC BY 4.0)"
+ },
+ "n_valid": 193,
+ "n_a": 193,
+ "n_b": 193,
+ "a_unit": "",
+ "breaks_a": [
+  4.04,
+  5.38
+ ],
+ "breaks_b": [
+  3.5,
+  5.5
+ ],
+ "ranges_a": [
+  "< 4.04",
+  "4.04 – 5.38",
+  "≥ 5.38"
+ ],
+ "ranges_b": [
+  "< 3.5",
+  "3.5 – 5.5",
+  "≥ 5.5"
+ ],
+ "palette": {
+  "1_1": "#e8e8e8",
+  "1_2": "#ace4e4",
+  "1_3": "#5ac8c8",
+  "2_1": "#dfb0d6",
+  "2_2": "#a5add3",
+  "2_3": "#5698b9",
+  "3_1": "#be64ac",
+  "3_2": "#8c62aa",
+  "3_3": "#3b4994"
+ },
+ "bivariate_run": {
+  "run_id": "20261102T220640Z-fa5f32",
+  "tool": "bivariate",
+  "tool_version": "2.0.0",
+  "git_commit": null,
+  "started_utc": "2026-11-02T22:06:40+00:00",
+  "config_sha256": "2e13a6236b9263ccd2ad0665d3ddc54418d3a86d53760bb30700f30471b1d129"
+ },
+ "check_breaks_from_data": {
+  "a": [
+   {
+    "between": [
+     1,
+     2
+    ],
+    "upper_of_lower": 4.0,
+    "lower_of_upper": 4.04,
+    "line": 4.02
+   },
+   {
+    "between": [
+     2,
+     3
+    ],
+    "upper_of_lower": 5.33,
+    "lower_of_upper": 5.38,
+    "line": 5.355
+   }
+  ],
+  "b": [
+   {
+    "between": [
+     1,
+     2
+    ],
+    "upper_of_lower": 3.0,
+    "lower_of_upper": 3.5,
+    "line": 3.25
+   },
+   {
+    "between": [
+     2,
+     3
+    ],
+    "upper_of_lower": 5.0,
+    "lower_of_upper": 5.5,
+    "line": 5.25
+   }
+  ]
+ },
+ "provenance": {
+  "script": "biv_web",
+  "version": "0.1.0",
+  "python": "3.13.18",
+  "input": {
+   "file": "data/bivariate.gpkg",
+   "sha256": "d89a861f697119bd5cb73906cc5239a26460a2a390bf92cad73b7a3ad8946e26"
+  },
+  "config": {
+   "input": {
+    "gpkg": "data/bivariate.gpkg",
+    "layer": "bivariate",
+    "legend": "data/legend.json"
+   },
+   "labels": {
+    "a": "Resilience",
+    "b": "Cyber-dependent crime (GI-TOC 2025)",
+    "a_short": "resilience",
+    "a_unit": "",
+    "key": "resilience",
+    "tab": "Resilience",
+    "b_short": "cyber crime",
+    "source": "Global Initiative Against Transnational Organized Crime (GI-TOC), Global Organized Crime Index 2025 (CC BY 4.0)"
+   },
+   "geometry": {
+    "simplify_m": 6000,
+    "round_m": 100
+   },
+   "output": {
+    "dir": "docs/data/resilience"
+   }
+  },
+  "created_utc": "2026-11-05T10:11:55+00:00"
+ }
+}

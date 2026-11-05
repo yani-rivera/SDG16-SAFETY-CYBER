@@ -1,0 +1,24 @@
+# biv_web — turns a `bivariate` 2.x GeoPackage into data for the interactive page
+
+[input]
+gpkg = "data/bivariate.gpkg"
+layer = "bivariate"
+legend = "data/legend.json"   # written by the bivariate run: labels, breaks, colours, run id
+
+[labels]
+# what INDEX_A and INDEX_B measure (confirm against the bivariate run's config.json)
+a = "Resilience"            # overrides legend.json labels when set
+b = "Cyber-dependent crime (GI-TOC 2025)"
+a_short = "resilience"
+a_unit = ""
+key = "resilience"
+tab = "Resilience"
+b_short = "cyber crime"
+source = "Global Initiative Against Transnational Organized Crime (GI-TOC), Global Organized Crime Index 2025 (CC BY 4.0)"
+
+[geometry]
+simplify_m = 6000        # Douglas-Peucker tolerance in metres (EPSG:8857)
+round_m = 100            # coordinate rounding in metres
+
+[output]
+dir = "docs/data/resilience"

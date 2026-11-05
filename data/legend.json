@@ -1,0 +1,55 @@
+{
+  "code_format": "i_j where i = class of indicator A, j = class of indicator B",
+  "axes": {
+    "a": {
+      "label": "Resilience",
+      "column": "CLASS_A",
+      "classes": 3,
+      "method": "quantile",
+      "breaks": [
+        4.04,
+        5.38
+      ],
+      "ranges": [
+        "< 4.04",
+        "4.04 – 5.38",
+        "≥ 5.38"
+      ]
+    },
+    "b": {
+      "label": "Cyber-dependent crime (GI-TOC 2025)",
+      "column": "CLASS_B",
+      "classes": 3,
+      "method": "quantile",
+      "breaks": [
+        3.5,
+        5.5
+      ],
+      "ranges": [
+        "< 3.5",
+        "3.5 – 5.5",
+        "≥ 5.5"
+      ]
+    }
+  },
+  "colors": {
+    "1_1": "#e8e8e8",
+    "1_2": "#ace4e4",
+    "1_3": "#5ac8c8",
+    "2_1": "#dfb0d6",
+    "2_2": "#a5add3",
+    "2_3": "#5698b9",
+    "3_1": "#be64ac",
+    "3_2": "#8c62aa",
+    "3_3": "#3b4994"
+  },
+  "no_data_color": "#cccccc",
+  "provenance": {
+    "run_id": "20261102T220640Z-fa5f32",
+    "tool": "bivariate",
+    "tool_version": "2.0.0",
+    "git_commit": null,
+    "started_utc": "2026-11-02T22:06:40+00:00",
+    "config_sha256": "2e13a6236b9263ccd2ad0665d3ddc54418d3a86d53760bb30700f30471b1d129"
+  }
+}
