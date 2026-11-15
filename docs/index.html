@@ -1,5 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src https://cdn.jsdelivr.net 'sha256-4ss2awcnH+yNSc9JEzNn9YowOL27qUI9d1pjs4syIbo='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Feeling Safe, Exposed Online</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400&display=swap">
@@ -29,6 +35,7 @@ header .kicker { font-family: var(--font-data); font-size: 12px; letter-spacing:
 header h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 4.6vw, 48px); line-height: 1.05; margin: 6px 0 8px; text-wrap: balance; }
 header p { margin: 0; max-width: 70ch; color: var(--muted); }
 .main { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.left { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
 @media (max-width: 900px) { .main { grid-template-columns: 1fr; } }
 .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; }
 .mapbox { position: relative; min-width: 0; padding: 6px; }
@@ -64,21 +71,63 @@ input[type=search] { width: 100%; font: 15px var(--font-body); color: var(--text
 .tabs button { font: 700 14px var(--font-body); color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer; }
 .tabs button[aria-selected="true"] { background: var(--text); color: var(--night); border-color: var(--text); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-</style>
 
+.presets { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; align-items: center; }
+.presets span { font-family: var(--font-data); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.presets button { font: 700 13px var(--font-body); color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; cursor: pointer; }
+.presets button[aria-pressed="true"] { background: var(--text); color: var(--night); border-color: var(--text); }
+.pick { padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px 12px; align-items: end; }
+.pick .field { display: grid; gap: 4px; min-width: 0; }
+.pick label { font-family: var(--font-data); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.pick select { width: 100%; font: 15px var(--font-body); color: var(--text); background: var(--night); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; }
+.pick select:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.pick .dir { font-size: 12.5px; color: var(--muted); }
+.pick #swap { font: 700 13px var(--font-body); color: var(--text); background: var(--night); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; cursor: pointer; margin-bottom: 20px; }
+.pick .how { grid-column: 1 / -1; margin: 0; font-size: 13px; color: var(--muted); max-width: 95ch; }
+@media (max-width: 640px) { .pick { grid-template-columns: 1fr; } .pick #swap { margin-bottom: 0; justify-self: start; } }
+.zoombtns { position: absolute; top: 12px; right: 12px; display: grid; gap: 4px; }
+.zoombtns button { width: 34px; height: 34px; font: 700 17px var(--font-body); color: var(--text); background: rgba(15,23,36,.85); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
+.maphint { position: absolute; left: 12px; bottom: 10px; margin: 0; font-size: 11.5px; color: var(--muted); pointer-events: none; }
+#map path.country { vector-effect: non-scaling-stroke; }
+@media (max-width: 640px) {
+  .presets button { padding: 8px 13px; }
+  .tip { display: none; }
+}
+.better { color: #8fd3a8; } .worse { color: #f0a58f; }
+.notes a { color: var(--text); }
+</style>
+</head>
+<body>
 <div class="wrap">
   <header>
-    <div class="kicker">#30DayMapChallenge 2026 · Bivariate · cyber-dependent crime</div>
+    <div class="kicker" id="kicker"></div>
     <h1 id="title">Feeling Safe, Exposed Online</h1>
-    <p>How safe people feel walking alone at night where they live, set against how strong the market for cyber-dependent crime is in their country. A street can feel safe while hacking and ransomware thrive behind the screens. Switch to the second layer to compare cyber crime with resilience instead. Tap a square in the legend to see one group, or find a country.</p>
-    <div class="tabs" role="tablist" aria-label="Layer">
-      <button type="button" role="tab" id="tab-feelsafe" data-key="feelsafe" aria-selected="true">Feeling safe at night</button>
-      <button type="button" role="tab" id="tab-resilience" data-key="resilience" aria-selected="false">Resilience</button>
-    </div>
+    <p id="blurb"></p>
+    <div class="presets" id="presets" aria-label="Ready-made pairs"><span>Try a pair</span></div>
   </header>
 
+  <section class="panel pick" aria-label="Choose the two measures">
+    <div class="field">
+      <label for="selA">Across the legend →</label>
+      <select id="selA"></select>
+      <div class="dir" id="dirA"></div>
+    </div>
+    <button type="button" id="swap" aria-label="Swap the two measures">⇄ Swap</button>
+    <div class="field">
+      <label for="selB">Up the legend ↑</label>
+      <select id="selB"></select>
+      <div class="dir" id="dirB"></div>
+    </div>
+    <p class="how" id="how"></p>
+  </section>
+
   <div class="main">
-    <div class="panel mapbox"><svg id="map" role="img" aria-label="World map coloured by bivariate class"></svg></div>
+    <div class="left">
+      <div class="panel mapbox"><svg id="map" role="img" aria-label="World map coloured by the two chosen measures"></svg>
+        <div class="zoombtns"><button type="button" id="zin" aria-label="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out">−</button><button type="button" id="zreset" aria-label="Show the whole world">⟲</button></div>
+        <p class="maphint" id="maphint"></p></div>
+      <article class="panel card" id="card" aria-live="polite"></article>
+    </div>
     <div class="side">
       <section class="panel legendbox" aria-label="Legend and filter">
         <h3>Legend · tap a square to filter</h3>
@@ -95,39 +144,65 @@ input[type=search] { width: 100%; font: 15px var(--font-body); color: var(--text
         <input id="q" type="search" list="names" placeholder="Type a country name" autocomplete="off">
         <datalist id="names"></datalist>
       </section>
-      <article class="panel card" id="card" aria-live="polite"></article>
     </div>
   </div>
 
   <section class="panel scatterbox" aria-label="Scatter plot">
-    <h3>Every country on both scales · dashed lines are the class breaks</h3>
-    <svg id="scatter" role="img" aria-label="Scatter plot of the two indicators"></svg>
+    <h3>Every country on both scales · dashed lines split low, middle and high</h3>
+    <svg id="scatter" role="img" aria-label="Scatter plot of the two chosen measures"></svg>
   </section>
 
   <section class="panel notes">
+    <p id="defA"></p>
+    <p id="defB"></p>
+    <p>Each measure is split into three groups of roughly equal size, low, middle and high, across the countries that have it. The dashed lines mark those splits. Ranks: 1 is the highest value, and tied values share a rank. Some scores come in half steps, so many countries share a value; in the scatter plot those dots are nudged by a small random amount so none hides another. Exact values are in the tooltips and the country card. Grey countries lack one or both values.</p>
     <p id="src"></p>
-    <p><strong>What “cyber-dependent crime” means.</strong> In the GI-TOC index these are crimes that can only exist because of computers and networks, where the technology is both the tool and the target: hacking and data theft, ransomware, malware and botnets, and attacks that knock websites offline (DDoS). They differ from cyber-enabled crimes, such as online scams or selling drugs on the internet, which GI-TOC scores under other markets. The score (1–10) is an expert assessment of how large and harmful this criminal market is in or from each country. It is not a count of attacks or victims, so a high score can mean a country is a base for cyber criminals as much as a place whose people are targeted.</p>
-    <p><strong>What “resilience” means.</strong> In the GI-TOC index, resilience is a country’s ability to withstand and disrupt organized crime through its institutions and society. It averages 12 expert-scored indicators (1–10): political leadership and governance, government transparency and accountability, international cooperation, national policies and laws, the judicial system and detention, law enforcement, territorial integrity, anti-money laundering, economic regulatory capacity, victim and witness support, prevention, and the role of non-state actors such as civil society and the media. A high score means strong defenses; it does not measure how much crime there is, or how safe people feel.</p>
-    <p><strong>What “feel safe walking alone at night” means.</strong> Gallup asks adults: “Do you feel safe walking alone at night in the city or area where you live?” The value is the share answering yes (Gallup Global Safety Report 2025). It measures perceived safety on the street, which can differ from both crime levels and institutional strength. A similar question is used for SDG indicator 16.1.4.</p>
-    <p>Classes split each indicator into thirds (terciles) across the countries that have it, as computed by the <code>bivariate</code> 2.0 runs; dashed lines are the class breaks. Ranks: 1 is the highest value; tied values share a rank. In the scatter plot, cyber-crime scores come in half steps, so many countries share the same value; each dot is nudged up or down by a small random amount (up to about ±0.2) so none hides another. Exact values are in the tooltips and the country card. Grey countries lack one or both values. Boundaries: Natural Earth, Equal Earth projection.</p>
     <p id="runs"></p>
-    <p>Made for the #30DayMapChallenge 2026 · Yanira A. Rivera.</p>
+    <p id="by"></p>
   </section>
 </div>
 <div class="tip" id="tip" hidden></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
 <script>
 (async () => {
   const $ = id => document.getElementById(id);
-  const KEYS = ['feelsafe', 'resilience'];
-  const DS = Object.fromEntries(await Promise.all(KEYS.map(async k => {
-    const [fc, m] = await Promise.all([fetch(`data/${k}/countries.geojson`).then(r => r.json()), fetch(`data/${k}/meta.json`).then(r => r.json())]);
-    return [k, { fc, m }];
-  })));
-  $('runs').textContent = 'Runs: ' + KEYS.map(k => `${DS[k].m.labels.tab} — ${DS[k].m.bivariate_run ? 'bivariate run ' + DS[k].m.bivariate_run.run_id : 'bivariate output (breaks read from its classes)'}, input SHA-256 ${DS[k].m.provenance.input.sha256.slice(0, 12)}…`).join(' · ');
+  const [FC, DOC] = await Promise.all(['countries.geojson', 'variables.json'].map(f => fetch('data/explore/' + f).then(r => r.json())));
+  const V = Object.fromEntries(DOC.variables.map(v => [v.key, v]));
+  const PAL = DOC.palette, P = DOC.page;
+  const word = ['', 'low', 'middle', 'high'];
+  const lc = s => s[0].toLowerCase() + s.slice(1);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const touch = window.matchMedia('(pointer: coarse)').matches;
+  const fmt = (v, x) => x.toFixed(v.decimals) + (v.unit === '%' ? '%' : '');
+  const cls = (v, x) => x == null ? null : x < v.breaks[0] ? 1 : x < v.breaks[1] ? 2 : 3;
 
-  // shared frame: EPSG:8857 metres drawn as planar coordinates; outline and graticule projected into the same metres
+  // ---- static text
+  $('kicker').textContent = P.kicker;
+  $('how').textContent = P.how_to;
+  $('by').textContent = `${P.kicker} · ${P.author}.`;
+  const up = Object.values(DOC.upstream || {})[0];
+  $('runs').textContent = `Built with ${DOC.build.script} ${DOC.build.version} on ${DOC.build.created_utc.slice(0, 10)}` +
+    (up ? `, from tables made by ${up.tool} ${up.script_version}` : '') + `. Groups: ${DOC.method.rule}.`;
+
+  // ---- pickers
+  const fill = sel => {
+    DOC.groups.forEach(g => {
+      const og = document.createElement('optgroup'); og.label = g.label;
+      DOC.variables.filter(v => v.group === g.key).forEach(v => {
+        const o = document.createElement('option'); o.value = v.key; o.textContent = `${v.label} (${v.n} countries)`; og.appendChild(o);
+      });
+      sel.appendChild(og);
+    });
+  };
+  fill($('selA')); fill($('selB'));
+  const pb = $('presets');
+  DOC.presets.forEach((p, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = p.title; b.dataset.i = i;
+    b.addEventListener('click', () => choose(p.a, p.b)); pb.appendChild(b);
+  });
+
+  // ---- map frame: EPSG:8857 metres drawn as planar coordinates
   const ee = d3.geoEqualEarth().scale(6378137).translate([0, 0]);
   const toM = ([lon, lat]) => { const [x, y] = ee([lon, lat]); return [x, -y]; };
   const ring = [];
@@ -139,134 +214,172 @@ input[type=search] { width: 100%; font: 15px var(--font-body); color: var(--text
   const proj = d3.geoIdentity().reflectY(true).fitExtent([[6, 6], [W - 6, H - 6]], SPHERE);
   const path = d3.geoPath(proj);
   const svg = d3.select('#map').attr('viewBox', `0 0 ${W} ${H}`);
-  svg.append('path').datum(SPHERE).attr('d', path).attr('fill', '#111c2c').attr('stroke', '#2a3a52');
-  svg.append('path').datum(GRAT).attr('d', path).attr('fill', 'none').attr('stroke', '#1d2a3e').attr('stroke-width', .5);
-  const gC = svg.append('g');
-  const outline = svg.append('path').attr('fill', 'none').attr('stroke', 'var(--focus)').attr('stroke-width', 1.6).attr('pointer-events', 'none');
+  const gz = svg.append('g');
+  gz.append('path').datum(SPHERE).attr('d', path).attr('fill', '#111c2c').attr('stroke', '#2a3a52');
+  gz.append('path').datum(GRAT).attr('d', path).attr('fill', 'none').attr('stroke', '#1d2a3e').attr('stroke-width', .5);
+  const countries = gz.append('g').selectAll('path').data(FC.features, f => f.properties.iso3).join('path').attr('class', 'country').attr('d', path)
+    .attr('stroke', '#0f1724').attr('stroke-width', .35).attr('fill', 'var(--nodata)');
+  const outline = gz.append('path').attr('fill', 'none').attr('stroke', 'var(--focus)').attr('stroke-width', 1.6).attr('pointer-events', 'none');
 
-  const SW = 1160, SH = 330, mg = { l: 52, r: 16, t: 14, b: 42 };
+  // pinch or ctrl/⌘ + scroll to zoom, drag to pan; plain scrolling keeps scrolling the page
+  const zoom = d3.zoom().scaleExtent([1, 10]).translateExtent([[0, 0], [W, H]])
+    .filter(ev => ev.type === 'wheel' ? (ev.ctrlKey || ev.metaKey) : (!ev.touches || ev.touches.length === 2 || ev.type === 'mousedown'))
+    .on('zoom', ev => { gz.attr('transform', ev.transform); outline.attr('stroke-width', 1.6 / ev.transform.k); });
+  svg.call(zoom).on('dblclick.zoom', null);
+  $('zin').addEventListener('click', () => svg.transition().duration(300).call(zoom.scaleBy, 1.8));
+  $('zout').addEventListener('click', () => svg.transition().duration(300).call(zoom.scaleBy, 1 / 1.8));
+  $('zreset').addEventListener('click', () => svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity));
+  $('maphint').textContent = touch ? 'Two fingers to zoom · tap a country' : 'Ctrl/⌘ + scroll to zoom · drag to move';
+
+  const narrow = window.matchMedia('(max-width: 640px)').matches;
+  const SW = narrow ? 560 : 1160, SH = narrow ? 470 : 330, mg = narrow ? { l: 66, r: 18, t: 16, b: 52 } : { l: 56, r: 16, t: 14, b: 42 };
   const sc = d3.select('#scatter').attr('viewBox', `0 0 ${SW} ${SH}`);
   const gAxes = sc.append('g'), gDots = sc.append('g');
-  const word = ['', 'low', 'medium', 'high'];
   const tip = $('tip');
+  d3.select('#names').selectAll('option').data([...FC.features].sort((a, b) => d3.ascending(a.properties.name, b.properties.name)))
+    .join('option').attr('value', f => f.properties.name);
 
-  let D, countries, dots, filter = null, selectedIso = 'HND';
-  const fmtA = v => D.m.a_unit === '%' ? `${v.toFixed(0)}%` : v.toFixed(2);
+  let A, B, dots, cells, counts, filter = null, selectedIso = 'HND';
+  const S = new Map();   // iso3 -> state for the current pair
 
-  function render(key) {
-    D = DS[key];
-    const L = D.m.labels, PAL = D.m.palette;
-    KEYS.forEach(k => $('tab-' + k).setAttribute('aria-selected', String(k === key)));
-    $('xlab').textContent = `${L.a_short[0].toUpperCase() + L.a_short.slice(1)} →`;
-    $('ylab').textContent = `${L.b} →`;
-    $('src').textContent = `Data: ${L.source}.`;
-    const valid = D.fc.features.filter(f => f.properties.qa === 'VALID');
+  function status(p) {
+    if (p.a == null && p.b == null) return 'no data';
+    if (p.a == null) return `no value for ${lc(A.label)}`;
+    if (p.b == null) return `no value for ${lc(B.label)}`;
+    return null;
+  }
+  const dirText = v => { const hb = v.higher_is === 'better' ? 'better' : 'worse';
+    return `Higher is <span class="${hb}">${hb}</span> · ${Number(v.n)} countries`; };
+
+  function choose(a, b) {
+    if (!V[a] || !V[b] || a === b) return;
+    A = V[a]; B = V[b];
+    $('selA').value = a; $('selB').value = b;
+    [...$('selA').options].forEach(o => o.disabled = o.value === b);
+    [...$('selB').options].forEach(o => o.disabled = o.value === a);
+    try { history.replaceState(null, '', '#' + a + '--' + b); } catch (e) {}
+    render();
+  }
+
+  function render() {
+    // ---- title and explanations follow the chosen pair
+    const pre = DOC.presets.find(p => p.a === A.key && p.b === B.key);
+    const title = pre ? pre.title : `${A.label} and ${lc(B.label)}`;
+    $('title').textContent = title; document.title = title;
+    $('blurb').textContent = pre ? pre.blurb : `This map compares ${A.phrase} with ${B.phrase}.`;
+    [...$('presets').querySelectorAll('button')].forEach(b => b.setAttribute('aria-pressed', String(DOC.presets[b.dataset.i] === pre)));
+    $('dirA').innerHTML = dirText(A); $('dirB').innerHTML = dirText(B);
+    $('xlab').textContent = `${A.label} →`; $('ylab').textContent = `${B.label} →`;
+    const def = v => `<strong>${esc(v.label)}.</strong> ${esc(v.description)} A higher value is ${esc(v.higher_is)} for the people who live there.`;
+    $('defA').innerHTML = def(A); $('defB').innerHTML = def(B);
+    const srcs = [...new Set([A.source, B.source])].map(k => DOC.sources[k]);
+    $('src').textContent = 'Data: ' + srcs.join(' ') + ' Boundaries: ' + DOC.sources.boundaries;
+
+    // ---- classify every country for this pair
+    S.clear();
+    FC.features.forEach(f => {
+      const iso = f.properties.iso3, a = A.values[iso] ?? null, b = B.values[iso] ?? null;
+      const ca = cls(A, a), cb = cls(B, b), ok = ca != null && cb != null;
+      S.set(iso, { iso, name: f.properties.name, a, b, ca, cb, ok, key: ok ? `${ca}_${cb}` : null, color: ok ? PAL[`${ca}_${cb}`] : null });
+    });
+    const valid = FC.features.filter(f => S.get(f.properties.iso3).ok);
     $('cover').textContent = `${valid.length} countries have both values.`;
+    countries.style('cursor', f => S.get(f.properties.iso3).ok ? 'pointer' : 'default')
+      .transition().duration(350).attr('fill', f => S.get(f.properties.iso3).color || 'var(--nodata)');
 
-    // map
-    countries = gC.selectAll('path').data(D.fc.features, f => f.properties.iso3).join('path').attr('d', path)
-      .attr('stroke', '#0f1724').attr('stroke-width', .35)
-      .style('cursor', f => f.properties.qa === 'VALID' ? 'pointer' : 'default');
-    countries.transition().duration(350).attr('fill', f => f.properties.color || 'var(--nodata)');
-
-    // legend
-    const counts = d3.rollup(valid, v => v.length, f => f.properties.cls);
-    const cells = [];
+    // ---- legend
+    counts = d3.rollup(valid, v => v.length, f => S.get(f.properties.iso3).key);
+    cells = [];
     for (let cb = 3; cb >= 1; cb--) for (let ca = 1; ca <= 3; ca++) cells.push({ ca, cb, key: `${ca}_${cb}` });
     d3.select('#grid').selectAll('button').data(cells).join('button').attr('type', 'button').attr('class', 'cell')
       .style('background', d => PAL[d.key])
-      .attr('aria-label', d => `${word[d.ca]} ${L.a_short}, ${word[d.cb]} ${L.b_short}: ${counts.get(d.key) || 0} countries`)
+      .attr('aria-label', d => `${word[d.ca]} ${A.short}, ${word[d.cb]} ${B.short}: ${counts.get(d.key) || 0} countries`)
       .text(d => counts.get(d.key) || 0)
-      .on('click', (ev, d) => setFilter(filter === d.key ? null : d.key, cells, counts));
+      .on('click', (ev, d) => setFilter(filter === d.key ? null : d.key));
 
-    // scatter
-    const aMin = D.m.a_unit === '%' ? 30 : 1, aMax = D.m.a_unit === '%' ? 100 : 9;
-    const x = d3.scaleLinear().domain([aMin, aMax]).range([mg.l, SW - mg.r]);
-    const y = d3.scaleLinear().domain([0.5, 9.5]).range([SH - mg.b, mg.t]);
+    // ---- scatter
+    const dom = v => { const pad = Math.max((v.max - v.min) * 0.06, v.step || 0); return [v.min - pad, v.max + pad]; };
+    const x = d3.scaleLinear().domain(dom(A)).range([mg.l, SW - mg.r]);
+    const y = d3.scaleLinear().domain(dom(B)).range([SH - mg.b, mg.t]);
     gAxes.selectAll('*').remove();
-    const st = g => g.call(g => g.selectAll('text').attr('fill', '#9aa8b9').attr('font-family', 'JetBrains Mono, monospace').attr('font-size', 11))
+    const st = g => g.call(g => g.selectAll('text').attr('fill', '#9aa8b9').attr('font-family', 'JetBrains Mono, monospace').attr('font-size', narrow ? 15 : 11))
       .call(g => g.selectAll('line,path').attr('stroke', '#2a3a52'));
-    gAxes.append('g').attr('transform', `translate(0,${SH - mg.b})`).call(d3.axisBottom(x).ticks(8).tickFormat(v => D.m.a_unit === '%' ? v + '%' : v)).call(st);
-    gAxes.append('g').attr('transform', `translate(${mg.l},0)`).call(d3.axisLeft(y).ticks(9)).call(st);
-    gAxes.append('text').attr('x', SW - mg.r).attr('y', SH - 6).attr('text-anchor', 'end').attr('fill', '#9aa8b9').attr('font-size', 12).text(`${L.a}${D.m.a_unit ? ' (' + D.m.a_unit + ')' : ''} →`);
-    gAxes.append('text').attr('transform', `translate(14,${mg.t}) rotate(-90)`).attr('text-anchor', 'end').attr('fill', '#9aa8b9').attr('font-size', 12).text(`${L.b} →`);
-    D.m.breaks_a.forEach(b => gAxes.append('line').attr('x1', x(b)).attr('x2', x(b)).attr('y1', mg.t).attr('y2', SH - mg.b).attr('stroke', '#5b6d86').attr('stroke-dasharray', '4 4'));
-    D.m.breaks_b.forEach(b => gAxes.append('line').attr('x1', mg.l).attr('x2', SW - mg.r).attr('y1', y(b)).attr('y2', y(b)).attr('stroke', '#5b6d86').attr('stroke-dasharray', '4 4'));
-    const jit = d3.randomNormal.source(d3.randomLcg(7))(0, 0.09);
-    valid.forEach(f => { f._jy = f.properties.b + jit(); });
+    const tick = v => t => t + (v.unit === '%' ? '%' : '');
+    gAxes.append('g').attr('transform', `translate(0,${SH - mg.b})`).call(d3.axisBottom(x).ticks(narrow ? 5 : 8).tickFormat(tick(A))).call(st);
+    gAxes.append('g').attr('transform', `translate(${mg.l},0)`).call(d3.axisLeft(y).ticks(7).tickFormat(tick(B))).call(st);
+    gAxes.append('text').attr('x', SW - mg.r).attr('y', SH - 6).attr('text-anchor', 'end').attr('fill', '#9aa8b9').attr('font-size', narrow ? 16 : 12).text(`${A.label} →`);
+    gAxes.append('text').attr('transform', `translate(14,${mg.t}) rotate(-90)`).attr('text-anchor', 'end').attr('fill', '#9aa8b9').attr('font-size', narrow ? 16 : 12).text(`${B.label} →`);
+    A.breaks.forEach(b => gAxes.append('line').attr('x1', x(b)).attr('x2', x(b)).attr('y1', mg.t).attr('y2', SH - mg.b).attr('stroke', '#5b6d86').attr('stroke-dasharray', '4 4'));
+    B.breaks.forEach(b => gAxes.append('line').attr('x1', mg.l).attr('x2', SW - mg.r).attr('y1', y(b)).attr('y2', y(b)).attr('stroke', '#5b6d86').attr('stroke-dasharray', '4 4'));
+    // coarse (half-step) scales: nudge dots so they do not sit on top of each other
+    const rnd = d3.randomNormal.source(d3.randomLcg(7))(0, 1);
+    const nudge = v => v.step ? Math.max(-2, Math.min(2, rnd())) * 0.18 * v.step : 0;
+    valid.forEach(f => { const s = S.get(f.properties.iso3); s.jx = s.a + nudge(A); s.jy = s.b + nudge(B); });
     dots = gDots.selectAll('circle').data(valid, f => f.properties.iso3).join('circle')
-      .attr('fill', f => f.properties.color).attr('stroke', '#0f1724').attr('stroke-width', .6).style('cursor', 'pointer')
-      .attr('r', 3.6).attr('cx', f => x(f.properties.a)).attr('cy', f => y(f._jy));
+      .attr('fill', f => S.get(f.properties.iso3).color).attr('stroke', '#0f1724').attr('stroke-width', .6).style('cursor', 'pointer')
+      .attr('r', narrow ? 5 : 3.6).attr('cx', f => x(S.get(f.properties.iso3).jx)).attr('cy', f => y(S.get(f.properties.iso3).jy));
 
-    // linking
+    // ---- linking
     const tipOn = (ev, f) => {
-      const p = f.properties; tip.hidden = false;
-      tip.textContent = p.qa === 'VALID' ? `${p.name} · ${L.a_short} ${fmtA(p.a)} · ${L.b_short} ${p.b.toFixed(1)}` : `${p.name} · ${noDataText(p)}`;
+      const s = S.get(f.properties.iso3); tip.hidden = false;
+      tip.textContent = s.ok ? `${s.name} · ${A.short} ${fmt(A, s.a)} · ${B.short} ${fmt(B, s.b)}` : `${s.name} · ${status(s)}`;
       tip.style.left = (ev.pageX + 12) + 'px'; tip.style.top = (ev.pageY - 32) + 'px';
     };
     [countries, dots].forEach(sel => sel.on('mousemove', tipOn).on('mouseleave', () => { tip.hidden = true; }).on('click', (ev, f) => show(f.properties.iso3)));
-    countries.on('mouseenter', (ev, f) => { if (f.properties.qa === 'VALID') show(f.properties.iso3); });
+    countries.on('mouseenter', (ev, f) => { if (S.get(f.properties.iso3).ok) show(f.properties.iso3); });
     dots.on('mouseenter', (ev, f) => show(f.properties.iso3));
 
-    // search list
-    d3.select('#names').selectAll('option').data([...D.fc.features].sort((a, b) => d3.ascending(a.properties.name, b.properties.name)), f => f.properties.iso3)
-      .join('option').attr('value', f => f.properties.name);
-
-    setFilter(null, cells, counts);
+    setFilter(null);
     show(selectedIso);
   }
 
-  function noDataText(p) {
-    const L = D.m.labels;
-    if (p.qa === 'MISSING_A') return `no ${L.a_short} value`;
-    if (p.qa === 'MISSING_B') return `no ${L.b_short} value`;
-    return 'no data';
-  }
-
-  function setFilter(k, cells, counts) {
-    const L = D.m.labels;
+  function setFilter(k) {
     filter = k;
     d3.selectAll('.cell').attr('aria-pressed', d => String(d.key === k));
-    countries.attr('opacity', f => !k || f.properties.cls === k ? 1 : .18);
-    dots.attr('opacity', f => !k || f.properties.cls === k ? 1 : .12);
+    countries.attr('opacity', f => !k || S.get(f.properties.iso3).key === k ? 1 : .18);
+    dots.attr('opacity', f => !k || S.get(f.properties.iso3).key === k ? 1 : .12);
     const c = k ? cells.find(x => x.key === k) : null;
-    $('hint').textContent = k ? `Showing ${counts.get(k) || 0} countries with ${word[c.ca]} ${L.a_short} and ${word[c.cb]} ${L.b_short}. Tap the square again to show all.` : 'Showing all countries.';
+    $('hint').textContent = k ? `Showing ${counts.get(k) || 0} countries with ${word[c.ca]} ${A.short} and ${word[c.cb]} ${B.short}. Tap the square again to show all.` : 'Showing all countries.';
   }
 
   function show(iso) {
     selectedIso = iso;
-    const f = D.fc.features.find(g => g.properties.iso3 === iso); if (!f) return;
-    const p = f.properties, L = D.m.labels, card = $('card');
+    const f = FC.features.find(g => g.properties.iso3 === iso); if (!f) return;
+    const s = S.get(iso), card = $('card');
     outline.attr('d', path(f));
-    dots.attr('r', d => d.properties.iso3 === iso ? 6.5 : 3.6).attr('stroke', d => d.properties.iso3 === iso ? 'var(--focus)' : '#0f1724').attr('stroke-width', d => d.properties.iso3 === iso ? 2 : .6);
+    dots.attr('r', d => d.properties.iso3 === iso ? (narrow ? 8.5 : 6.5) : (narrow ? 5 : 3.6)).attr('stroke', d => d.properties.iso3 === iso ? 'var(--focus)' : '#0f1724').attr('stroke-width', d => d.properties.iso3 === iso ? 2 : .6);
     dots.filter(d => d.properties.iso3 === iso).raise();
-    const h = `<h3>Country</h3><h2></h2>`;
-    if (p.qa !== 'VALID') {
-      card.innerHTML = h + `<p class="hint"></p><dl></dl>`;
-      card.querySelector('h2').textContent = p.name;
-      card.querySelector('.hint').textContent = `Not classified: ${noDataText(p)}.`;
-      const dl = card.querySelector('dl');
-      if (p.a != null) dl.innerHTML += `<dt></dt><dd class="va"></dd>`;
-      if (p.b != null) dl.innerHTML += `<dt></dt><dd class="vb"></dd>`;
-      if (p.a != null) { dl.querySelector('.va').previousElementSibling.textContent = L.a; dl.querySelector('.va').textContent = `${fmtA(p.a)} · rank ${p.rank_a} of ${p.n_a}`; }
-      if (p.b != null) { dl.querySelector('.vb').previousElementSibling.textContent = L.b; dl.querySelector('.vb').textContent = `${p.b.toFixed(1)} · rank ${p.rank_b} of ${p.n_b}`; }
-      return;
+    card.innerHTML = `<h3>Country</h3><h2></h2><div class="cls"><span class="sw"></span><span class="ctext"></span></div><dl></dl>`;
+    card.querySelector('h2').textContent = s.name;
+    if (s.ok) {
+      card.querySelector('.sw').style.background = s.color;
+      card.querySelector('.ctext').textContent = `${word[s.ca][0].toUpperCase() + word[s.ca].slice(1)} ${A.short}, ${word[s.cb]} ${B.short}`;
+    } else {
+      card.querySelector('.sw').style.background = 'var(--nodata)';
+      card.querySelector('.ctext').textContent = `Not coloured: ${status(s)}.`;
     }
-    card.innerHTML = h + `<div class="cls"><span class="sw"></span><span class="ctext"></span></div>
-      <dl><dt class="la"></dt><dd class="va"></dd><dt class="lb"></dt><dd class="vb"></dd></dl>`;
-    card.querySelector('h2').textContent = p.name;
-    card.querySelector('.sw').style.background = p.color;
-    card.querySelector('.ctext').textContent = `${word[p.ca]} ${L.a_short}, ${word[p.cb]} ${L.b_short}`;
-    card.querySelector('.la').textContent = L.a; card.querySelector('.lb').textContent = L.b;
-    card.querySelector('.va').textContent = `${fmtA(p.a)} · rank ${p.rank_a} of ${p.n_a}`;
-    card.querySelector('.vb').textContent = `${p.b.toFixed(1)} · rank ${p.rank_b} of ${p.n_b}`;
+    const dl = card.querySelector('dl');
+    [[A, s.a], [B, s.b]].forEach(([v, val]) => {
+      const dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = v.label;
+      dd.textContent = val == null ? 'no value' : `${fmt(v, val)} · rank ${v.ranks[iso]} of ${v.n}`;
+      dl.append(dt, dd);
+    });
   }
 
   $('q').addEventListener('input', e => {
-    const f = D.fc.features.find(g => g.properties.name.toLowerCase() === e.target.value.trim().toLowerCase());
+    const f = FC.features.find(g => g.properties.name.toLowerCase() === e.target.value.trim().toLowerCase());
     if (f) show(f.properties.iso3);
   });
-  KEYS.forEach(k => $('tab-' + k).addEventListener('click', () => render(k)));
-  render('feelsafe');
+  $('selA').addEventListener('change', e => choose(e.target.value, B.key));
+  $('selB').addEventListener('change', e => choose(A.key, e.target.value));
+  $('swap').addEventListener('click', () => choose(B.key, A.key));
+
+  // start from the link's #a--b when it names two known variables, else the default pair
+  const h = (location.hash || '').slice(1).split('--');
+  if (h.length === 2 && V[h[0]] && V[h[1]] && h[0] !== h[1]) choose(h[0], h[1]); else choose(DOC.default.a, DOC.default.b);
 })();
 </script>
+
+</body>
+</html>

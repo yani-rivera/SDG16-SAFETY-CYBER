@@ -1,0 +1,375 @@
+{
+ "crs": "EPSG:8857",
+ "n_countries": 237,
+ "variables": {
+  "safe_walking_night_pct": {
+   "n": 144,
+   "breaks": [
+    60.0,
+    75.0
+   ]
+  },
+  "law_and_order_index": {
+   "n": 108,
+   "breaks": [
+    71.6667,
+    81.0
+   ]
+  },
+  "criminality_avg": {
+   "n": 193,
+   "breaks": [
+    4.5,
+    5.78
+   ]
+  },
+  "criminal_markets_avg": {
+   "n": 193,
+   "breaks": [
+    4.43,
+    5.47
+   ]
+  },
+  "criminal_actors_avg": {
+   "n": 193,
+   "breaks": [
+    4.6,
+    5.9
+   ]
+  },
+  "cyber_dependent_crimes": {
+   "n": 193,
+   "breaks": [
+    3.5,
+    5.5
+   ]
+  },
+  "financial_crimes": {
+   "n": 193,
+   "breaks": [
+    6.0,
+    7.0
+   ]
+  },
+  "resilience_avg": {
+   "n": 193,
+   "breaks": [
+    4.04,
+    5.38
+   ]
+  },
+  "national_policies_and_laws": {
+   "n": 193,
+   "breaks": [
+    5.0,
+    6.5
+   ]
+  },
+  "law_enforcement": {
+   "n": 193,
+   "breaks": [
+    4.0,
+    5.5
+   ]
+  },
+  "judicial_system_and_detention": {
+   "n": 193,
+   "breaks": [
+    3.0,
+    5.0
+   ]
+  },
+  "prevention": {
+   "n": 193,
+   "breaks": [
+    4.0,
+    5.5
+   ]
+  }
+ },
+ "tables": {
+  "gitoc": {
+   "file": "data/gitoc_oc_index_wide.csv",
+   "sha256": "95112c7ce4548428b2aa3c196c6824c555dc04456b2a8548768000b7eecc36eb",
+   "where": {
+    "year": 2025
+   }
+  },
+  "gallup": {
+   "file": "data/gallup_safety_2025.csv",
+   "sha256": "ea6b063ddcd0df621ed85834edeef6d70f8cd875605caca7138f95a184fcf5c4",
+   "where": null
+  }
+ },
+ "upstream": {
+  "gitoc": {
+   "tool": "crime_flat",
+   "script_version": "1.0.1",
+   "run_utc": "2026-10-16T16:40:40+00:00",
+   "provenance_sha256": "e54d90d47d06c92f2f1c2aacdeb27a022e22e2c86bc97e96f93dfce4838647b3"
+  },
+  "gallup": {
+   "tool": "crime_flat",
+   "script_version": "1.0.1",
+   "run_utc": "2026-10-16T16:40:40+00:00",
+   "provenance_sha256": "e54d90d47d06c92f2f1c2aacdeb27a022e22e2c86bc97e96f93dfce4838647b3"
+  }
+ },
+ "checks": {
+  "codes_without_polygon": {}
+ },
+ "provenance": {
+  "script": "biv_web",
+  "version": "0.2.1",
+  "python": "3.13.18",
+  "input": {
+   "file": "data/bivariate.gpkg",
+   "sha256": "d89a861f697119bd5cb73906cc5239a26460a2a390bf92cad73b7a3ad8946e26"
+  },
+  "config": {
+   "mode": "explore",
+   "input": {
+    "gpkg": "data/bivariate.gpkg",
+    "layer": "bivariate",
+    "legend": "data/legend.json"
+   },
+   "tables": {
+    "gitoc": {
+     "file": "data/gitoc_oc_index_wide.csv",
+     "key": "iso3",
+     "where": {
+      "year": 2025
+     },
+     "provenance": "data/crime_flat_provenance.json"
+    },
+    "gallup": {
+     "file": "data/gallup_safety_2025.csv",
+     "key": "iso3",
+     "provenance": "data/crime_flat_provenance.json"
+    }
+   },
+   "geometry": {
+    "simplify_m": 6000,
+    "round_m": 100
+   },
+   "output": {
+    "dir": "docs/data/explore"
+   },
+   "page": {
+    "kicker": "Interactive companion · Pick two measures · #30DayMapChallenge 2026",
+    "author": "Yanira A. Rivera",
+    "how_to": "Pick one measure for each side of the legend. The map sorts every country into low, middle or high on each, and colours it by the combination. Tap a square in the legend to see one group, or find a country."
+   },
+   "default": {
+    "a": "safe_walking_night_pct",
+    "b": "cyber_dependent_crimes"
+   },
+   "presets": [
+    {
+     "a": "safe_walking_night_pct",
+     "b": "cyber_dependent_crimes",
+     "title": "Feeling Safe, Exposed Online",
+     "blurb": "How safe people feel walking alone at night where they live, set against how strong cyber crime is in their country. A street can feel safe while hacking and ransomware thrive behind the screens."
+    },
+    {
+     "a": "resilience_avg",
+     "b": "criminality_avg",
+     "title": "The Strength to Resist",
+     "blurb": "How strong a country's defences against organized crime are, set against how much organized crime it has."
+    },
+    {
+     "a": "safe_walking_night_pct",
+     "b": "criminality_avg",
+     "title": "Does Feeling Safe Match the Crime?",
+     "blurb": "How safe people say they feel at night, set against how much organized crime experts find in their country."
+    },
+    {
+     "a": "safe_walking_night_pct",
+     "b": "law_enforcement",
+     "title": "Feeling Safe and the Police",
+     "blurb": "How safe people feel at night, set against how well law enforcement is judged to deal with organized crime."
+    }
+   ],
+   "groups": [
+    {
+     "key": "feel",
+     "label": "How people feel (survey)"
+    },
+    {
+     "key": "crime",
+     "label": "Organized crime (expert scores)"
+    },
+    {
+     "key": "defence",
+     "label": "Defences against crime (expert scores)"
+    }
+   ],
+   "sources": {
+    "gallup": "Gallup, Global Safety Report 2025 (survey fieldwork 2024). https://www.gallup.com/analytics/356996/gallup-global-safety-research-center.aspx",
+    "gitoc": "Global Initiative Against Transnational Organized Crime (GI-TOC), Global Organized Crime Index 2025 (CC BY 4.0). https://ocindex.net",
+    "boundaries": "Natural Earth, Equal Earth projection."
+   },
+   "variables": [
+    {
+     "key": "safe_walking_night_pct",
+     "table": "gallup",
+     "field": "safe_walking_night_pct",
+     "label": "Feeling safe at night",
+     "short": "feeling of safety",
+     "phrase": "how safe people feel walking alone at night",
+     "unit": "%",
+     "decimals": 0,
+     "higher_is": "better",
+     "group": "feel",
+     "source": "gallup",
+     "description": "Gallup asks adults: \"Do you feel safe walking alone at night in the city or area where you live?\" The value is the share who answer yes. It measures how safe people feel, which can differ from how much crime there is."
+    },
+    {
+     "key": "law_and_order_index",
+     "table": "gallup",
+     "field": "law_and_order_index",
+     "label": "Law and order, as people live it",
+     "short": "law and order",
+     "phrase": "how secure people's daily lives are",
+     "unit": "",
+     "decimals": 0,
+     "higher_is": "better",
+     "group": "feel",
+     "source": "gallup",
+     "description": "Gallup's Law and Order Index (0 to 100) combines four survey answers: confidence in the local police, feeling safe walking alone at night, and whether the person was robbed or assaulted in the past year. Higher means people feel and are more secure. Gallup lists it for fewer countries than the question above."
+    },
+    {
+     "key": "criminality_avg",
+     "table": "gitoc",
+     "field": "criminality_avg",
+     "label": "Organized crime overall",
+     "short": "organized crime",
+     "phrase": "how much organized crime a country has",
+     "decimals": 2,
+     "higher_is": "worse",
+     "group": "crime",
+     "source": "gitoc",
+     "description": "The GI-TOC criminality score (1 to 10): the average of how large the country's criminal markets are and how strong its criminal groups are. It is an expert assessment, not a count of crimes."
+    },
+    {
+     "key": "criminal_markets_avg",
+     "table": "gitoc",
+     "field": "criminal_markets_avg",
+     "label": "Illegal markets",
+     "short": "illegal markets",
+     "phrase": "how large illegal markets are",
+     "decimals": 2,
+     "higher_is": "worse",
+     "group": "crime",
+     "source": "gitoc",
+     "description": "Average expert score (1 to 10) across 15 illegal markets, among them human trafficking, arms, drugs, wildlife, counterfeit goods, extortion, financial crime and cyber crime."
+    },
+    {
+     "key": "criminal_actors_avg",
+     "table": "gitoc",
+     "field": "criminal_actors_avg",
+     "label": "Criminal groups",
+     "short": "criminal groups",
+     "phrase": "how strong criminal groups are",
+     "decimals": 2,
+     "higher_is": "worse",
+     "group": "crime",
+     "source": "gitoc",
+     "description": "Average expert score (1 to 10) for the reach and influence of five kinds of criminal actor: mafia-style groups, looser criminal networks, actors inside the state, foreign actors and private-sector actors."
+    },
+    {
+     "key": "cyber_dependent_crimes",
+     "table": "gitoc",
+     "field": "cyber_dependent_crimes",
+     "label": "Cyber crime",
+     "short": "cyber crime",
+     "phrase": "how strong cyber crime is",
+     "decimals": 1,
+     "higher_is": "worse",
+     "group": "crime",
+     "source": "gitoc",
+     "description": "Crimes that exist only because of computers and networks: hacking and data theft, ransomware, malware, and attacks that knock websites offline. The score (1 to 10) is an expert judgement of how large and harmful this market is in or from the country. A high score can mean a country is a base for cyber criminals as much as a target."
+    },
+    {
+     "key": "financial_crimes",
+     "table": "gitoc",
+     "field": "financial_crimes",
+     "label": "Financial crime",
+     "short": "financial crime",
+     "phrase": "how widespread organized financial crime is",
+     "decimals": 1,
+     "higher_is": "worse",
+     "group": "crime",
+     "source": "gitoc",
+     "description": "Organized fraud, embezzlement, misuse of funds and tax evasion. Expert score from 1 to 10."
+    },
+    {
+     "key": "resilience_avg",
+     "table": "gitoc",
+     "field": "resilience_avg",
+     "label": "Resilience to organized crime",
+     "short": "resilience",
+     "phrase": "how strong a country's defences against organized crime are",
+     "decimals": 2,
+     "higher_is": "better",
+     "group": "defence",
+     "source": "gitoc",
+     "description": "A country's ability to withstand and disrupt organized crime through its institutions and society. It averages 12 expert-scored indicators (1 to 10), from political leadership and the courts to prevention and civil society. A high score means strong defences; it does not say how much crime there is."
+    },
+    {
+     "key": "national_policies_and_laws",
+     "table": "gitoc",
+     "field": "national_policies_and_laws",
+     "label": "Laws against organized crime",
+     "short": "strength of its laws",
+     "phrase": "how good the laws and policies against organized crime are",
+     "decimals": 1,
+     "higher_is": "better",
+     "group": "defence",
+     "source": "gitoc",
+     "description": "Whether the country has laws, strategies and policies that address organized crime. Expert score from 1 to 10."
+    },
+    {
+     "key": "law_enforcement",
+     "table": "gitoc",
+     "field": "law_enforcement",
+     "label": "Police and law enforcement",
+     "short": "strength of law enforcement",
+     "phrase": "how well law enforcement deals with organized crime",
+     "decimals": 1,
+     "higher_is": "better",
+     "group": "defence",
+     "source": "gitoc",
+     "description": "The state's ability to investigate organized crime, gather intelligence and enforce the law. Expert score from 1 to 10."
+    },
+    {
+     "key": "judicial_system_and_detention",
+     "table": "gitoc",
+     "field": "judicial_system_and_detention",
+     "label": "Courts and prisons",
+     "short": "strength of courts and prisons",
+     "phrase": "how well the courts and prisons handle organized crime",
+     "decimals": 1,
+     "higher_is": "better",
+     "group": "defence",
+     "source": "gitoc",
+     "description": "Whether the courts can try organized-crime cases effectively and independently, and whether prisons are run so that they are not controlled by criminal groups. Expert score from 1 to 10."
+    },
+    {
+     "key": "prevention",
+     "table": "gitoc",
+     "field": "prevention",
+     "label": "Prevention",
+     "short": "prevention",
+     "phrase": "how much is done to prevent organized crime",
+     "decimals": 1,
+     "higher_is": "better",
+     "group": "defence",
+     "source": "gitoc",
+     "description": "Strategies and community programmes that stop organized crime before it takes hold. Expert score from 1 to 10."
+    }
+   ]
+  },
+  "created_utc": "2026-11-14T21:37:23+00:00"
+ }
+}

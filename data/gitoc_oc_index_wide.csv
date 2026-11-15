@@ -1,0 +1,580 @@
+year,country,region,continent,criminal_actors_avg,criminal_markets_avg,criminality_avg,cyber_dependent_crimes,financial_crimes,judicial_system_and_detention,law_enforcement,national_policies_and_laws,prevention,resilience_avg,iso3
+2021,Afghanistan,Southern Asia,Asia,,6.9,7.08,,,2.0,3.0,3.0,2.0,,AFG
+2021,Albania,Central & Eastern Europe,Europe,,5.25,5.63,,,5.0,5.5,6.0,5.0,,ALB
+2021,Algeria,North Africa,Africa,,4.65,4.51,,,4.0,6.0,6.0,4.0,,DZA
+2021,Andorra,Western Europe,Europe,,2.55,2.96,,,8.0,8.0,8.0,8.0,,AND
+2021,Angola,Central Africa,Africa,,5.2,5.29,,,3.5,4.5,5.0,3.5,,AGO
+2021,Antigua and Barbuda,Caribbean ,Americas,,3.05,3.34,,,3.0,4.0,5.0,4.5,,ATG
+2021,Argentina,South America,Americas,,3.75,4.38,,,6.0,6.5,7.0,5.5,,ARG
+2021,Armenia,Central Asia and the Caucasus,Asia,,3.4,3.26,,,4.5,6.0,6.0,5.0,,ARM
+2021,Australia,Australia and New Zealand,Oceania,,3.75,4.0,,,8.0,8.0,8.0,7.5,,AUS
+2021,Austria,Western Europe,Europe,,3.95,4.04,,,8.0,8.5,8.0,8.0,,AUT
+2021,Azerbaijan,Central Asia and the Caucasus,Asia,,4.15,5.08,,,2.5,4.0,4.0,5.0,,AZE
+2021,Bahamas,Caribbean ,Americas,,3.95,3.79,,,3.5,6.0,6.0,5.0,,BHS
+2021,Bahrain,Western Asia,Asia,,5.65,4.83,,,5.0,5.0,5.5,5.5,,BHR
+2021,Bangladesh,Southern Asia,Asia,,4.95,4.98,,,3.0,4.0,5.0,4.0,,BGD
+2021,Barbados,Caribbean ,Americas,,2.55,3.21,,,4.5,6.5,6.0,6.0,,BRB
+2021,Belarus,Central & Eastern Europe,Europe,,4.4,5.08,,,3.0,5.0,4.0,5.0,,BLR
+2021,Belgium,Western Europe,Europe,,5.05,4.34,,,6.0,7.0,7.0,6.5,,BEL
+2021,Belize,Central America,Americas,,4.4,4.64,,,4.0,4.5,3.0,3.0,,BLZ
+2021,Benin,West Africa,Africa,,5.25,5.25,,,3.0,4.0,3.0,2.0,,BEN
+2021,Bhutan,Southern Asia,Asia,,3.75,3.69,,,5.5,5.0,4.5,4.0,,BTN
+2021,Bolivia,South America,Americas,,4.6,4.3,,,3.5,5.0,6.0,6.0,,BOL
+2021,Bosnia and Herzegovina,Central & Eastern Europe,Europe,,5.15,5.89,,,3.5,3.5,4.0,4.0,,BIH
+2021,Botswana,Southern Africa,Africa,,3.8,3.71,,,6.5,5.0,6.0,4.5,,BWA
+2021,Brazil,South America,Americas,,6.5,6.5,,,3.0,5.0,4.5,4.0,,BRA
+2021,Brunei,South-Eastern Asia,Asia,,3.15,2.76,,,4.0,5.0,4.5,4.5,,BRN
+2021,Bulgaria,Central & Eastern Europe,Europe,,5.1,5.43,,,5.5,5.5,6.0,5.0,,BGR
+2021,Burkina Faso,West Africa,Africa,,5.35,5.49,,,4.0,3.0,5.0,2.0,,BFA
+2021,Burundi,Central Africa,Africa,,4.4,4.51,,,2.5,1.5,2.5,2.5,,BDI
+2021,Cabo Verde,West Africa,Africa,,3.7,4.04,,,7.0,6.0,7.0,6.0,,CPV
+2021,Cambodia,South-Eastern Asia,Asia,,6.15,5.83,,,4.0,4.5,4.5,3.0,,KHM
+2021,Cameroon,Central Africa,Africa,,6.25,6.31,,,2.5,4.0,4.5,2.5,,CMR
+2021,Canada,North America,Americas,,3.45,3.66,,,7.0,7.0,8.0,6.0,,CAN
+2021,Central African Republic,Central Africa,Africa,,5.7,7.04,,,2.0,1.5,2.5,1.0,,CAF
+2021,Chad,Central Africa,Africa,,5.35,5.86,,,2.0,2.5,2.5,1.0,,TCD
+2021,Chile,South America,Americas,,4.45,4.6,,,6.0,4.0,6.0,6.5,,CHL
+2021,China,Eastern Asia,Asia,,5.9,6.01,,,5.0,5.5,7.0,6.0,,CHN
+2021,Colombia,South America,Americas,,7.2,7.66,,,5.5,6.0,7.0,4.5,,COL
+2021,Comoros,Southern Africa,Africa,,3.85,3.86,,,2.0,2.0,2.5,1.5,,COM
+2021,"Congo, Dem. Rep.",Central Africa,Africa,,6.5,7.75,,,2.5,1.5,3.0,2.0,,COD
+2021,"Congo, Rep.",Central Africa,Africa,,4.8,5.03,,,2.0,4.5,5.0,4.0,,COG
+2021,Costa Rica,Central America,Americas,,4.85,4.99,,,5.0,5.0,6.5,5.0,,CRI
+2021,Croatia,Central & Eastern Europe,Europe,,4.75,5.06,,,5.0,6.0,6.0,5.0,,HRV
+2021,Cuba,Caribbean ,Americas,,4.0,3.44,,,3.0,7.0,6.0,7.0,,CUB
+2021,Cyprus,Southern Europe,Europe,,3.5,4.19,,,4.0,5.5,6.0,3.5,,CYP
+2021,Czech Republic,Central & Eastern Europe,Europe,,4.75,4.63,,,6.5,7.0,6.5,6.0,,CZE
+2021,Côte d'Ivoire,West Africa,Africa,,6.05,6.15,,,5.5,5.0,4.5,3.0,,CIV
+2021,Denmark,Northern Europe,Europe,,3.85,3.86,,,7.5,8.0,9.0,8.5,,DNK
+2021,Djibouti,East Africa,Africa,,3.6,3.99,,,4.0,4.0,5.5,4.0,,DJI
+2021,Dominica,Caribbean ,Americas,,2.75,2.63,,,5.0,5.5,5.0,6.0,,DMA
+2021,Dominican Republic,Caribbean ,Americas,,5.3,5.15,,,4.0,4.5,5.0,4.0,,DOM
+2021,Ecuador,South America,Americas,,6.0,6.25,,,5.5,6.0,6.5,5.0,,ECU
+2021,Egypt,North Africa,Africa,,4.95,5.16,,,3.5,5.0,4.5,2.5,,EGY
+2021,El Salvador,Central America,Americas,,5.0,5.94,,,2.0,3.0,5.0,4.5,,SLV
+2021,Equatorial Guinea,Central Africa,Africa,,3.85,4.11,,,2.0,2.0,5.5,1.5,,GNQ
+2021,Eritrea,East Africa,Africa,,4.05,4.34,,,2.0,3.0,2.5,2.0,,ERI
+2021,Estonia,Northern Europe,Europe,,3.45,3.6,,,8.0,7.0,8.0,8.0,,EST
+2021,Eswatini,Southern Africa,Africa,,3.25,3.63,,,2.5,3.0,4.0,4.0,,SWZ
+2021,Ethiopia,East Africa,Africa,,4.95,4.79,,,5.0,4.0,6.0,5.0,,ETH
+2021,Fiji,Melanesia,Oceania,,3.8,3.9,,,4.5,5.0,5.5,5.0,,FJI
+2021,Finland,Northern Europe,Europe,,2.8,2.71,,,8.0,8.0,8.0,8.0,,FIN
+2021,France,Western Europe,Europe,,5.7,5.66,,,6.5,7.0,7.5,6.5,,FRA
+2021,Gabon,Central Africa,Africa,,4.8,4.9,,,3.0,4.5,4.0,3.5,,GAB
+2021,Gambia,West Africa,Africa,,5.15,4.83,,,5.0,5.5,5.0,3.5,,GMB
+2021,Georgia,Central Asia and the Caucasus,Asia,,3.05,2.96,,,3.5,6.5,6.5,5.5,,GEO
+2021,Germany,Western Europe,Europe,,4.8,4.9,,,7.5,7.5,8.0,8.0,,DEU
+2021,Ghana,West Africa,Africa,,6.15,6.01,,,5.0,4.5,5.0,4.0,,GHA
+2021,Greece,Southern Europe,Europe,,4.1,4.93,,,4.5,5.0,6.0,5.0,,GRC
+2021,Grenada,Caribbean ,Americas,,2.85,3.05,,,5.0,6.0,5.0,4.0,,GRD
+2021,Guatemala,Central America,Americas,,5.95,6.48,,,4.0,5.0,5.5,4.0,,GTM
+2021,Guinea,West Africa,Africa,,5.15,5.2,,,3.0,3.5,3.5,1.5,,GIN
+2021,Guinea-Bissau,West Africa,Africa,,4.9,5.45,,,3.0,3.0,3.0,1.5,,GNB
+2021,Guyana,South America,Americas,,4.7,5.1,,,4.0,2.5,3.0,5.0,,GUY
+2021,Haiti,Caribbean,Americas,,5.45,5.73,,,3.0,2.0,4.0,3.0,,HTI
+2021,Honduras,Central America,Americas,,5.7,6.98,,,3.0,4.5,4.0,4.5,,HND
+2021,Hungary,Central & Eastern Europe,Europe,,4.75,4.5,,,5.0,6.0,5.5,6.0,,HUN
+2021,Iceland,Northern Europe,Europe,,2.65,3.39,,,8.5,8.5,8.5,7.5,,ISL
+2021,India,Southern Asia,Asia,,6.3,5.53,,,5.0,5.5,4.5,5.0,,IND
+2021,Indonesia,South-Eastern Asia,Asia,,6.0,6.38,,,3.5,4.0,5.0,4.5,,IDN
+2021,Iran,Western Asia,Asia,,6.95,7.1,,,3.5,3.5,4.0,3.0,,IRN
+2021,Iraq,Western Asia,Asia,,6.35,7.05,,,4.0,3.5,4.0,4.0,,IRQ
+2021,Ireland,Western Europe,Europe,,4.55,4.9,,,7.0,7.0,8.0,5.5,,IRL
+2021,Israel,Western Asia,Asia,,4.2,4.41,,,5.0,5.5,7.0,6.0,,ISR
+2021,Italy,Southern Europe,Europe,,5.25,5.81,,,5.0,7.5,8.0,5.5,,ITA
+2021,Jamaica,Caribbean ,Americas,,4.2,5.91,,,4.0,6.0,5.5,6.0,,JAM
+2021,Japan,Eastern Asia,Asia,,4.05,4.53,,,8.0,7.5,7.5,6.0,,JPN
+2021,Jordan,Western Asia,Asia,,4.55,4.71,,,4.5,7.0,6.5,6.5,,JOR
+2021,Kazakhstan,Central Asia and the Caucasus,Asia,,4.15,4.26,,,5.0,4.5,5.5,4.0,,KAZ
+2021,Kenya,East Africa,Africa,,6.65,6.95,,,5.5,4.5,6.0,3.5,,KEN
+2021,Kiribati,Melanesia,Oceania,,2.45,2.35,,,4.0,5.0,6.0,3.0,,KIR
+2021,"Korea, DPR",Eastern Asia,Asia,,5.3,4.78,,,1.5,1.5,2.0,1.0,,PRK
+2021,"Korea, Rep.",Eastern Asia,Asia,,3.95,4.91,,,8.5,8.0,8.0,8.0,,KOR
+2021,Kuwait,Western Asia,Asia,,6.15,5.14,,,5.5,6.0,5.5,5.5,,KWT
+2021,Kyrgyzstan,Central Asia and the Caucasus,Asia,,4.4,5.33,,,3.0,3.5,5.0,5.0,,KGZ
+2021,Laos,South-Eastern Asia,Asia,,5.65,5.51,,,3.0,4.0,4.0,3.5,,LAO
+2021,Latvia,Northern Europe,Europe,,3.65,3.51,,,7.5,7.5,8.0,7.5,,LVA
+2021,Lebanon,Western Asia,Asia,,5.9,6.76,,,4.0,3.5,4.0,3.5,,LBN
+2021,Lesotho,Southern Africa,Africa,,3.55,3.9,,,3.0,3.0,5.5,2.0,,LSO
+2021,Liberia,West Africa,Africa,,5.1,5.05,,,3.5,4.0,3.0,2.0,,LBR
+2021,Libya,North Africa,Africa,,6.1,6.55,,,1.5,1.5,2.0,1.0,,LBY
+2021,Liechtenstein,Western Europe,Europe,,2.0,1.88,,,9.0,8.0,9.0,9.5,,LIE
+2021,Lithuania,Northern Europe,Europe,,3.0,3.31,,,7.5,7.0,7.0,6.5,,LTU
+2021,Luxembourg,Western Europe,Europe,,2.35,2.36,,,7.5,7.0,7.0,8.0,,LUX
+2021,Madagascar,Southern Africa,Africa,,5.3,5.59,,,3.0,3.5,4.0,4.0,,MDG
+2021,Malawi,Southern Africa,Africa,,4.15,3.83,,,4.0,4.0,5.5,3.5,,MWI
+2021,Malaysia,South-Eastern Asia,Asia,,6.25,5.94,,,5.0,5.5,7.0,6.0,,MYS
+2021,Maldives,Southern Asia,Asia,,3.5,4.06,,,3.0,4.0,5.0,3.0,,MDV
+2021,Mali,West Africa,Africa,,6.15,5.89,,,2.5,2.0,2.5,2.0,,MLI
+2021,Malta,Southern Europe,Europe,,4.05,4.65,,,4.5,4.0,6.0,4.0,,MLT
+2021,Marshall Islands,Micronesia,Oceania,,2.5,2.31,,,6.5,4.0,6.0,4.0,,MHL
+2021,Mauritania,North Africa,Africa,,4.0,4.38,,,2.5,3.0,3.5,2.0,,MRT
+2021,Mauritius,Southern Africa,Africa,,4.4,4.51,,,5.5,5.5,6.0,5.0,,MUS
+2021,Mexico,Central America,Americas,,8.0,7.56,,,4.0,5.0,6.0,4.0,,MEX
+2021,Micronesia (Federated States of),Micronesia,Oceania,,2.85,3.3,,,5.5,6.0,5.5,5.5,,FSM
+2021,Moldova,Central & Eastern Europe,Europe,,3.9,4.45,,,3.0,3.5,5.0,3.0,,MDA
+2021,Monaco,Southern Europe,Europe,,1.6,2.43,,,8.0,7.0,6.0,4.5,,MCO
+2021,Mongolia,Eastern Asia,Asia,,3.9,4.01,,,4.0,5.0,6.5,6.5,,MNG
+2021,Montenegro,Central & Eastern Europe,Europe,,5.0,6.0,,,4.5,3.5,5.0,5.0,,MNE
+2021,Morocco,North Africa,Africa,,4.95,4.79,,,4.0,5.5,6.0,4.0,,MAR
+2021,Mozambique,Southern Africa,Africa,,6.05,6.53,,,2.0,2.0,5.5,2.0,,MOZ
+2021,Myanmar,South-Eastern Asia,Asia,,7.05,7.59,,,3.5,4.0,4.5,3.0,,MMR
+2021,Namibia,Southern Africa,Africa,,3.9,4.33,,,4.5,4.5,6.5,4.0,,NAM
+2021,Nauru,Micronesia,Oceania,,1.65,1.76,,,6.0,5.5,6.5,1.0,,NRU
+2021,Nepal,Southern Asia,Asia,,5.7,6.16,,,3.0,4.5,3.5,3.5,,NPL
+2021,Netherlands,Western Europe,Europe,,5.0,4.69,,,7.5,7.5,7.5,8.0,,NLD
+2021,New Zealand,Australia and New Zealand,Oceania,,3.25,3.25,,,8.0,8.5,8.5,8.0,,NZL
+2021,Nicaragua,Central America,Americas,,5.5,6.06,,,2.5,3.0,3.5,3.5,,NIC
+2021,Niger,West Africa,Africa,,5.9,6.01,,,2.5,4.0,4.0,2.0,,NER
+2021,Nigeria,West Africa,Africa,,7.05,7.15,,,4.5,4.5,7.0,5.0,,NGA
+2021,North Macedonia,Central & Eastern Europe,Europe,,5.0,5.31,,,5.0,5.0,5.0,5.0,,MKD
+2021,Norway,Northern Europe,Europe,,4.0,3.81,,,8.0,8.5,8.5,7.0,,NOR
+2021,Oman,Western Asia,Asia,,4.9,4.14,,,5.5,7.5,6.5,4.0,,OMN
+2021,Pakistan,Southern Asia,Asia,,6.3,6.28,,,3.0,4.0,5.0,4.0,,PAK
+2021,Palau,Micronesia,Oceania,,3.0,2.94,,,3.0,5.0,5.5,4.0,,PLW
+2021,Panama,Central America,Americas,,6.35,6.68,,,3.0,4.5,6.0,4.0,,PAN
+2021,Papua New Guinea,Melanesia,Oceania,,5.0,5.44,,,4.5,3.0,5.0,2.5,,PNG
+2021,Paraguay,South America,Americas,,5.9,6.7,,,3.0,3.0,3.0,3.0,,PRY
+2021,Peru,South America,Americas,,6.2,6.35,,,6.0,5.0,6.0,3.0,,PER
+2021,Philippines,South-Eastern Asia,Asia,,6.3,6.84,,,4.5,2.0,5.0,4.0,,PHL
+2021,Poland,Central & Eastern Europe,Europe,,4.4,4.01,,,5.5,6.5,7.0,6.0,,POL
+2021,Portugal,Southern Europe,Europe,,4.1,4.55,,,5.5,7.5,7.0,5.5,,PRT
+2021,Qatar,Western Asia,Asia,,5.8,5.21,,,5.0,5.5,5.0,6.0,,QAT
+2021,Romania,Central & Eastern Europe,Europe,,5.05,4.59,,,6.0,5.5,6.0,5.0,,ROU
+2021,Russia,Central & Eastern Europe,Europe,,6.1,6.24,,,4.0,4.5,5.5,3.5,,RUS
+2021,Rwanda,Central Africa,Africa,,4.1,3.68,,,5.0,7.0,6.0,5.0,,RWA
+2021,Samoa,Polynesia,Oceania,,2.45,2.04,,,6.0,6.5,6.5,6.0,,WSM
+2021,San Marino,Southern Europe,Europe,,1.9,3.01,,,6.5,5.0,5.5,4.5,,SMR
+2021,Sao Tome and Principe,Central Africa,Africa,,1.8,1.78,,,6.0,5.0,7.0,3.0,,STP
+2021,Saudi Arabia,Western Asia,Asia,,6.9,6.01,,,3.0,4.5,4.5,5.0,,SAU
+2021,Senegal,West Africa,Africa,,5.0,4.81,,,5.0,6.0,6.5,5.0,,SEN
+2021,Serbia,Central & Eastern Europe,Europe,,5.55,6.21,,,5.0,5.0,5.0,5.5,,SRB
+2021,Seychelles,Southern Africa,Africa,,3.6,3.68,,,6.0,4.0,5.5,5.0,,SYC
+2021,Sierra Leone,West Africa,Africa,,5.05,5.4,,,2.0,4.0,2.5,4.0,,SLE
+2021,Singapore,South-Eastern Asia,Asia,,3.25,3.13,,,9.0,9.0,8.5,9.0,,SGP
+2021,Slovakia,Central & Eastern Europe,Europe,,4.25,4.69,,,5.0,5.5,6.5,5.0,,SVK
+2021,Slovenia,Central & Eastern Europe,Europe,,3.95,4.29,,,6.0,6.0,6.5,6.0,,SVN
+2021,Solomon Islands,Melanesia,Oceania,,3.55,4.15,,,5.5,6.0,4.5,6.5,,SLB
+2021,Somalia,East Africa,Africa,,4.45,5.79,,,2.0,1.5,2.0,1.5,,SOM
+2021,South Africa,Southern Africa,Africa,,6.0,6.63,,,6.0,5.0,6.5,5.0,,ZAF
+2021,South Sudan,East Africa,Africa,,5.3,6.34,,,2.0,2.0,3.0,1.5,,SSD
+2021,Spain,Southern Europe,Europe,,5.3,5.78,,,7.0,8.0,8.0,5.0,,ESP
+2021,Sri Lanka,Southern Asia,Asia,,4.65,4.64,,,3.5,3.5,5.5,2.5,,LKA
+2021,St. Kitts and Nevis,Caribbean ,Americas,,3.2,4.1,,,7.0,4.5,6.5,4.0,,KNA
+2021,St. Lucia,Caribbean ,Americas,,3.05,4.09,,,6.0,4.5,6.5,6.0,,LCA
+2021,St. Vincent and the Grenadines,Caribbean ,Americas,,2.85,3.3,,,6.0,4.5,6.5,6.0,,VCT
+2021,Sudan,East Africa,Africa,,5.55,6.46,,,3.5,3.5,4.5,2.0,,SDN
+2021,Suriname,South America,Americas,,4.55,4.9,,,2.0,2.0,2.0,2.5,,SUR
+2021,Sweden,Northern Europe,Europe,,4.25,4.56,,,7.0,6.5,7.0,7.0,,SWE
+2021,Switzerland,Western Europe,Europe,,4.3,4.34,,,7.0,7.5,6.5,6.0,,CHE
+2021,Syria,Western Asia,Asia,,6.05,6.84,,,1.5,2.0,2.0,2.0,,SYR
+2021,Tajikistan,Central Asia and the Caucasus,Asia,,5.1,5.61,,,3.0,3.0,2.0,3.0,,TJK
+2021,Tanzania,East Africa,Africa,,6.55,6.15,,,5.0,4.0,5.5,3.0,,TZA
+2021,Thailand,South-Eastern Asia,Asia,,6.4,5.76,,,4.0,5.0,5.5,5.0,,THA
+2021,Timor-Leste,South-Eastern Asia,Asia,,3.55,3.96,,,4.0,4.5,4.5,3.5,,TLS
+2021,Togo,West Africa,Africa,,4.9,5.33,,,3.5,4.0,4.5,4.0,,TGO
+2021,Tonga,Polynesia,Oceania,,3.3,3.78,,,4.0,5.0,6.0,4.0,,TON
+2021,Trinidad and Tobago,Caribbean ,Americas,,4.25,4.94,,,3.5,5.5,7.0,5.0,,TTO
+2021,Tunisia,North Africa,Africa,,4.2,3.79,,,4.5,4.5,6.5,3.0,,TUN
+2021,Turkey,Western Asia,Asia,,6.4,6.89,,,2.0,3.0,4.5,3.5,,TUR
+2021,Turkmenistan,Central Asia and the Caucasus,Asia,,4.35,4.61,,,2.0,2.0,2.5,2.0,,TKM
+2021,Tuvalu,Polynesia,Oceania,,1.7,1.54,,,8.0,7.0,6.5,5.0,,TUV
+2021,Uganda,East Africa,Africa,,5.65,6.14,,,4.0,4.0,5.0,4.0,,UGA
+2021,Ukraine,Central & Eastern Europe,Europe,,5.6,6.18,,,4.5,3.5,4.0,4.0,,UKR
+2021,United Arab Emirates,Western Asia,Asia,,6.75,5.75,,,5.5,6.0,5.5,6.5,,ARE
+2021,United Kingdom,Western Europe,Europe,,4.4,4.89,,,8.5,7.5,8.5,7.5,,GBR
+2021,United States,North America,Americas,,5.5,5.5,,,6.0,8.0,6.5,6.0,,USA
+2021,Uruguay,South America,Americas,,2.75,2.69,,,7.0,8.0,7.0,7.0,,URY
+2021,Uzbekistan,Central Asia and the Caucasus,Asia,,4.55,4.96,,,3.0,3.5,4.0,5.0,,UZB
+2021,Vanuatu,Melanesia,Oceania,,2.4,2.2,,,7.0,6.5,6.5,3.5,,VUT
+2021,Venezuela,South America,Americas,,5.65,6.64,,,1.5,1.5,2.0,2.0,,VEN
+2021,Vietnam,South-Eastern Asia,Asia,,6.05,6.28,,,4.0,4.5,5.5,4.5,,VNM
+2021,Yemen,Western Asia,Asia,,5.0,6.13,,,1.5,2.0,2.0,2.0,,YEM
+2021,Zambia,Southern Africa,Africa,,4.6,4.93,,,5.0,4.0,6.5,3.0,,ZMB
+2021,Zimbabwe,Southern Africa,Africa,,5.2,5.66,,,3.0,3.0,3.0,3.0,,ZWE
+2023,Afghanistan,Southern Asia,Asia,7.2,7.0,7.1,4.0,7.5,1.5,1.5,1.5,1.5,1.5,AFG
+2023,Albania,Central & Eastern Europe,Europe,5.5,4.83,5.17,6.0,6.0,6.0,5.0,6.0,5.0,5.13,ALB
+2023,Algeria,North Africa,Africa,4.6,5.17,4.88,4.0,8.0,3.0,6.0,6.0,3.5,4.38,DZA
+2023,Andorra,Western Europe,Europe,3.7,2.73,3.22,2.0,6.5,8.0,8.5,8.5,8.5,7.96,AND
+2023,Angola,Central Africa,Africa,6.0,5.17,5.58,5.0,5.0,3.5,4.5,5.0,4.0,4.5,AGO
+2023,Antigua and Barbuda,Caribbean & Central,Americas,3.3,2.67,2.98,1.5,2.5,3.0,4.5,5.0,5.0,4.58,ATG
+2023,Argentina,South America,Americas,5.5,4.5,5.0,5.5,3.5,5.5,5.5,6.0,5.0,5.96,ARG
+2023,Armenia,Central Asia and the Caucasus,Asia,2.7,2.93,2.82,2.5,3.0,4.5,6.5,6.5,4.5,5.71,ARM
+2023,Australia,Australia and New Zealand,Oceania,3.7,4.3,4.0,7.5,7.0,8.0,8.0,8.0,6.0,7.38,AUS
+2023,Austria,Western Europe,Europe,4.1,4.17,4.13,5.0,5.5,8.5,8.5,8.0,7.5,7.5,AUT
+2023,Azerbaijan,Central Asia and the Caucasus,Asia,5.5,4.1,4.8,3.0,5.0,2.5,4.5,4.0,5.0,3.96,AZE
+2023,Bahamas,Caribbean & Central,Americas,3.9,3.6,3.75,2.5,3.5,3.5,6.5,6.5,5.5,5.5,BHS
+2023,Bahrain,Western Asia,Asia,4.5,5.4,4.95,7.0,7.0,4.5,4.5,5.5,5.5,5.42,BHR
+2023,Bangladesh,Southern Asia,Asia,5.2,5.03,5.12,5.0,4.5,3.0,4.0,5.0,4.0,4.42,BGD
+2023,Barbados,Caribbean & Central,Americas,3.7,2.43,3.07,1.5,2.0,5.0,7.0,7.0,6.0,6.13,BRB
+2023,Belarus,Central & Eastern Europe,Europe,6.4,5.33,5.87,7.0,8.0,2.0,3.0,4.0,4.5,3.25,BLR
+2023,Belgium,Western Europe,Europe,3.7,5.17,4.43,6.0,6.5,6.0,7.0,7.5,7.0,7.04,BEL
+2023,Belize,Caribbean & Central,Americas,5.3,4.43,4.87,3.5,4.0,4.0,4.0,3.5,3.0,3.29,BLZ
+2023,Benin,West Africa,Africa,5.2,5.43,5.32,4.5,6.0,3.0,4.0,3.0,2.0,3.5,BEN
+2023,Bhutan,Southern Asia,Asia,3.9,3.9,3.9,2.5,3.0,5.5,5.0,4.5,4.0,4.71,BTN
+2023,Bolivia,South America,Americas,4.9,5.0,4.95,4.5,5.0,3.0,4.5,6.0,6.0,4.83,BOL
+2023,Bosnia and Herzegovina,Central & Eastern Europe,Europe,6.4,5.3,5.85,4.5,6.0,2.0,3.5,4.0,4.5,3.88,BIH
+2023,Botswana,Southern Africa,Africa,4.3,4.4,4.35,5.0,5.5,6.0,5.0,7.0,4.5,5.46,BWA
+2023,Brazil,South America,Americas,6.6,6.93,6.77,8.0,7.0,3.0,4.5,4.5,4.0,4.92,BRA
+2023,Brunei,South-Eastern Asia,Asia,2.4,3.3,2.85,4.0,4.0,4.0,5.5,4.5,5.0,4.58,BRN
+2023,Bulgaria,Central & Eastern Europe,Europe,5.9,5.4,5.65,6.0,7.0,5.0,5.0,6.0,5.0,5.33,BGR
+2023,Burkina Faso,West Africa,Africa,6.0,5.83,5.92,5.5,5.5,4.0,3.0,5.5,2.0,3.46,BFA
+2023,Burundi,Central Africa,Africa,5.1,4.63,4.87,2.0,6.5,2.0,1.5,3.0,2.5,2.17,BDI
+2023,Cabo Verde,West Africa,Africa,4.6,3.97,4.28,4.5,4.0,7.5,6.0,7.0,6.5,6.58,CPV
+2023,Cambodia,South-Eastern Asia,Asia,7.0,6.7,6.85,7.5,8.0,4.0,3.5,4.0,3.0,3.63,KHM
+2023,Cameroon,Central Africa,Africa,6.3,6.23,6.27,5.0,6.0,2.5,4.0,4.5,2.5,3.17,CMR
+2023,Canada,North America,Americas,3.9,3.87,3.88,6.5,5.0,7.0,7.0,8.0,6.0,7.21,CAN
+2023,Central African Republic,Central Africa,Africa,7.9,5.6,6.75,2.0,3.5,2.0,1.5,2.0,1.0,1.79,CAF
+2023,Chad,Central Africa,Africa,5.9,5.1,5.5,3.0,3.0,2.0,2.5,3.0,1.0,2.42,TCD
+2023,Chile,South America,Americas,5.3,5.07,5.18,5.0,4.0,5.5,4.5,6.0,6.5,6.17,CHL
+2023,China,Eastern Asia,Asia,6.2,6.53,6.37,8.5,7.5,5.0,6.0,7.5,6.0,5.67,CHN
+2023,Colombia,South America,Americas,8.2,7.3,7.75,7.0,8.0,5.5,5.0,6.5,4.5,5.63,COL
+2023,Comoros,Southern Africa,Africa,4.1,3.73,3.92,1.5,5.0,2.0,2.0,2.5,1.5,2.38,COM
+2023,"Congo, Dem, Rep,",Central Africa,Africa,8.5,6.2,7.35,2.5,7.0,2.5,1.5,3.0,2.0,2.38,COD
+2023,"Congo, Rep,",Central Africa,Africa,5.1,4.47,4.78,2.5,4.0,2.0,4.5,5.0,4.0,3.25,COG
+2023,Costa Rica,Caribbean & Central,Americas,5.7,5.37,5.53,7.0,5.5,6.0,5.0,6.5,5.0,5.63,CRI
+2023,Croatia,Central & Eastern Europe,Europe,5.4,4.9,5.15,4.5,5.5,5.5,6.0,7.0,5.5,5.92,HRV
+2023,Cuba,Caribbean & Central,Americas,3.1,3.63,3.37,3.0,3.5,3.0,7.0,6.0,7.0,5.38,CUB
+2023,Cyprus,Southern Europe,Europe,4.9,3.97,4.43,4.0,5.0,4.5,5.5,6.0,4.0,4.46,CYP
+2023,Czech Republic,Central & Eastern Europe,Europe,4.5,4.87,4.68,5.5,6.0,6.5,7.0,7.0,6.0,6.42,CZE
+2023,Côte d'Ivoire,West Africa,Africa,6.1,5.93,6.02,5.5,6.5,5.0,5.5,5.0,5.5,5.13,CIV
+2023,Denmark,Northern Europe,Europe,3.7,4.33,4.02,6.5,4.5,7.5,7.5,9.0,8.5,8.13,DNK
+2023,Djibouti,East Africa,Africa,5.0,4.3,4.65,1.5,6.5,4.0,4.0,4.5,4.0,4.38,DJI
+2023,Dominica,Caribbean & Central,Americas,2.6,2.67,2.63,3.0,4.0,4.5,6.0,5.0,6.0,5.17,DMA
+2023,Dominican Republic,Caribbean & Central,Americas,4.9,5.13,5.02,3.5,5.0,4.0,5.0,5.0,4.5,4.79,DOM
+2023,Ecuador,South America,Americas,7.4,6.73,7.07,6.5,6.5,4.0,4.0,5.0,4.5,4.88,ECU
+2023,Egypt,North Africa,Africa,5.0,5.1,5.05,2.5,8.0,3.0,5.0,4.5,2.5,3.83,EGY
+2023,El Salvador,Caribbean & Central,Americas,6.4,5.43,5.92,5.5,6.5,2.0,3.0,4.0,4.0,3.21,SLV
+2023,Equatorial Guinea,Central Africa,Africa,5.2,3.57,4.38,1.5,6.0,2.5,2.0,5.5,2.0,2.21,GNQ
+2023,Eritrea,East Africa,Africa,4.0,3.93,3.97,1.5,4.0,2.0,3.0,2.5,2.0,2.33,ERI
+2023,Estonia,Northern Europe,Europe,4.3,4.2,4.25,7.0,7.0,8.0,7.5,8.0,8.0,7.88,EST
+2023,Ethiopia,East Africa,Africa,5.3,6.07,5.68,5.0,7.0,5.0,3.5,6.0,5.0,4.75,ETH
+2023,Fiji,Melanesia,Oceania,4.0,4.3,4.15,4.0,5.5,4.0,5.0,6.0,5.5,5.42,FJI
+2023,Finland,Northern Europe,Europe,2.7,3.27,2.98,5.0,4.0,8.0,8.5,8.5,8.5,8.63,FIN
+2023,France,Western Europe,Europe,5.7,5.93,5.82,6.5,6.5,6.5,7.0,7.5,7.0,6.96,FRA
+2023,Gabon,Central Africa,Africa,5.1,4.6,4.85,2.5,7.0,3.0,4.5,4.0,3.5,3.25,GAB
+2023,Gambia,West Africa,Africa,4.4,4.67,4.53,3.0,5.5,4.5,5.0,5.0,4.0,5.17,GMB
+2023,Georgia,Central Asia and the Caucasus,Asia,3.6,3.6,3.6,5.0,5.0,3.0,6.5,6.5,5.5,5.25,GEO
+2023,Germany,Western Europe,Europe,5.2,5.47,5.33,6.5,7.5,8.0,7.5,8.0,8.0,7.5,DEU
+2023,Ghana,West Africa,Africa,5.6,6.0,5.8,6.0,6.0,5.0,4.5,5.0,4.0,5.46,GHA
+2023,Greece,Southern Europe,Europe,6.0,4.7,5.35,3.5,6.5,4.5,5.0,6.0,5.0,5.17,GRC
+2023,Grenada,Caribbean & Central,Americas,3.2,2.67,2.93,3.0,3.0,4.5,6.5,5.5,4.0,5.13,GRD
+2023,Guatemala,Caribbean & Central,Americas,7.1,6.1,6.6,5.0,6.5,3.5,5.0,4.5,4.0,4.08,GTM
+2023,Guinea,West Africa,Africa,4.4,4.77,4.58,2.0,5.5,3.5,3.5,4.0,2.0,3.13,GIN
+2023,Guinea-Bissau,West Africa,Africa,5.6,4.6,5.1,2.0,6.0,3.0,3.0,3.0,2.0,2.58,GNB
+2023,Guyana,South America,Americas,6.8,5.13,5.97,2.0,8.5,4.0,3.0,3.5,4.5,4.04,GUY
+2023,Haiti,Caribbean & Central,Americas,6.1,5.77,5.93,3.0,7.5,2.5,2.0,4.0,2.5,2.46,HTI
+2023,Honduras,Caribbean & Central,Americas,8.1,6.0,7.05,6.5,7.5,3.5,5.0,4.0,4.5,4.08,HND
+2023,Hungary,Central & Eastern Europe,Europe,4.5,4.73,4.62,5.0,5.5,5.0,5.0,5.0,6.0,4.88,HUN
+2023,Iceland,Northern Europe,Europe,3.8,2.93,3.37,5.0,5.0,8.5,9.0,8.5,7.5,8.21,ISL
+2023,India,Southern Asia,Asia,4.8,6.7,5.75,7.5,7.0,4.5,5.0,5.0,5.0,5.42,IND
+2023,Indonesia,South-Eastern Asia,Asia,7.1,6.6,6.85,7.5,8.0,3.5,3.5,5.0,4.0,4.25,IDN
+2023,Iran,Western Asia,Asia,6.7,7.37,7.03,8.0,9.0,3.0,3.0,4.0,3.0,3.13,IRN
+2023,Iraq,Western Asia,Asia,8.0,6.27,7.13,2.0,9.0,3.5,3.5,3.5,3.0,3.21,IRQ
+2023,Ireland,Western Europe,Europe,5.0,5.17,5.08,6.0,6.0,7.0,7.0,8.0,5.5,7.33,IRL
+2023,Israel,Western Asia,Asia,4.7,5.0,4.85,9.0,6.5,5.0,6.5,6.5,6.5,6.08,ISR
+2023,Italy,Southern Europe,Europe,6.7,5.73,6.22,6.0,7.0,5.5,7.5,8.0,6.0,6.46,ITA
+2023,Jamaica,Caribbean & Central,Americas,6.7,4.9,5.8,4.5,7.0,3.5,6.0,5.5,6.5,5.42,JAM
+2023,Japan,Eastern Asia,Asia,4.7,3.87,4.28,3.5,6.0,8.0,7.5,7.5,5.5,7.38,JPN
+2023,Jordan,Western Asia,Asia,5.0,4.87,4.93,5.5,6.5,4.5,6.5,6.0,6.5,5.58,JOR
+2023,Kazakhstan,Central Asia and the Caucasus,Asia,4.6,4.33,4.47,2.5,5.0,5.0,4.0,5.5,4.0,4.54,KAZ
+2023,Kenya,East Africa,Africa,7.1,6.93,7.02,8.0,7.5,5.0,4.5,7.0,3.0,5.33,KEN
+2023,Kiribati,Melanesia,Oceania,2.3,2.6,2.45,2.0,4.0,4.0,5.0,6.0,3.0,4.33,KIR
+2023,"Korea, DPR",Eastern Asia,Asia,3.9,5.73,4.82,9.0,8.0,1.0,1.5,2.0,1.0,1.79,PRK
+2023,"Korea, Rep,",Eastern Asia,Asia,5.3,3.57,4.43,3.5,4.0,9.0,8.0,9.0,8.0,8.08,KOR
+2023,Kuwait,Western Asia,Asia,4.7,5.7,5.2,6.5,7.0,5.5,6.0,5.5,5.5,5.54,KWT
+2023,Kyrgyzstan,Central Asia and the Caucasus,Asia,6.0,4.63,5.32,2.0,6.0,3.0,3.0,4.0,5.0,3.83,KGZ
+2023,Laos,South-Eastern Asia,Asia,5.9,6.33,6.12,5.5,8.0,3.0,4.0,4.0,3.5,3.46,LAO
+2023,Latvia,Northern Europe,Europe,3.3,4.5,3.9,6.0,6.5,8.0,8.0,8.5,7.5,7.58,LVA
+2023,Lebanon,Western Asia,Asia,7.9,6.3,7.1,4.0,9.0,3.5,3.0,4.0,3.5,3.46,LBN
+2023,Lesotho,Southern Africa,Africa,4.4,3.43,3.92,1.0,5.0,3.0,3.0,5.0,3.5,3.92,LSO
+2023,Liberia,West Africa,Africa,5.6,5.4,5.5,4.5,7.5,3.5,4.0,4.0,2.0,3.25,LBR
+2023,Libya,North Africa,Africa,7.3,6.57,6.93,3.5,9.5,1.5,1.5,2.0,1.0,1.54,LBY
+2023,Liechtenstein,Western Europe,Europe,2.2,2.33,2.27,4.0,6.5,9.0,8.5,9.0,9.5,8.46,LIE
+2023,Lithuania,Northern Europe,Europe,4.0,3.8,3.9,5.5,6.0,8.0,7.5,7.0,6.5,7.29,LTU
+2023,Luxembourg,Western Europe,Europe,2.8,2.9,2.85,4.5,6.5,7.5,7.0,8.0,8.0,7.5,LUX
+2023,Madagascar,Southern Africa,Africa,5.9,5.27,5.58,2.0,6.0,2.5,4.0,3.5,4.0,3.33,MDG
+2023,Malawi,Southern Africa,Africa,4.2,4.77,4.48,2.5,7.0,5.0,3.5,5.5,4.0,4.58,MWI
+2023,Malaysia,South-Eastern Asia,Asia,5.8,6.67,6.23,8.0,8.0,5.5,5.5,7.5,6.5,5.92,MYS
+2023,Maldives,Southern Asia,Asia,5.0,3.53,4.27,3.5,3.5,3.0,4.0,5.5,3.0,4.08,MDV
+2023,Mali,West Africa,Africa,5.4,6.47,5.93,5.0,7.0,2.5,2.0,2.5,2.0,2.38,MLI
+2023,Malta,Southern Europe,Europe,5.7,4.3,5.0,5.5,8.0,4.5,4.5,6.0,4.0,5.13,MLT
+2023,Marshall Islands,Micronesia,Oceania,2.3,2.73,2.52,3.0,3.5,7.0,5.5,6.5,4.0,5.79,MHL
+2023,Mauritania,North Africa,Africa,4.5,4.27,4.38,1.5,6.0,2.5,2.5,3.5,2.0,3.13,MRT
+2023,Mauritius,Southern Africa,Africa,4.6,4.13,4.37,4.0,4.5,5.5,5.5,6.0,5.0,5.54,MUS
+2023,Mexico,Caribbean & Central,Americas,7.0,8.13,7.57,7.5,8.5,4.0,5.0,5.5,4.0,4.21,MEX
+2023,Micronesia (Federated States of),Micronesia,Oceania,3.0,3.0,3.0,2.0,2.5,6.5,6.5,6.0,5.5,5.88,FSM
+2023,Moldova,Central & Eastern Europe,Europe,6.0,5.2,5.6,7.5,8.0,3.0,4.0,5.0,3.0,3.92,MDA
+2023,Monaco,Southern Europe,Europe,3.5,1.67,2.58,3.0,2.5,8.0,7.0,6.5,5.0,5.63,MCO
+2023,Mongolia,Eastern Asia,Asia,4.4,3.83,4.12,6.0,5.0,4.5,5.0,6.5,6.5,5.21,MNG
+2023,Montenegro,Central & Eastern Europe,Europe,6.6,5.2,5.9,5.5,6.0,4.5,4.5,5.0,5.0,4.75,MNE
+2023,Morocco,North Africa,Africa,4.5,5.1,4.8,4.0,7.5,4.0,5.5,6.5,4.0,4.63,MAR
+2023,Mozambique,Southern Africa,Africa,6.5,5.9,6.2,3.0,6.5,2.0,2.0,5.5,2.0,3.29,MOZ
+2023,Myanmar,South-Eastern Asia,Asia,8.6,7.7,8.15,7.5,8.5,1.5,1.5,2.0,1.5,1.63,MMR
+2023,Namibia,Southern Africa,Africa,4.5,4.1,4.3,5.0,4.5,4.0,3.5,6.0,4.0,4.54,NAM
+2023,Nauru,Micronesia,Oceania,1.9,2.2,2.05,2.5,3.0,6.5,5.5,7.5,1.0,5.0,NRU
+2023,Nepal,Southern Asia,Asia,7.1,6.03,6.57,3.0,7.0,3.0,4.5,4.5,4.0,4.0,NPL
+2023,Netherlands,Western Europe,Europe,4.7,5.23,4.97,7.5,5.0,7.5,7.5,7.5,8.0,7.46,NLD
+2023,New Zealand,Australia and New Zealand,Oceania,4.4,3.77,4.08,6.0,7.0,7.5,7.5,8.0,7.5,7.88,NZL
+2023,Nicaragua,Caribbean & Central,Americas,6.2,5.23,5.72,3.5,4.0,2.0,2.5,3.0,3.0,2.08,NIC
+2023,Niger,West Africa,Africa,5.7,5.7,5.7,1.0,6.5,2.5,4.0,4.5,2.5,3.46,NER
+2023,Nigeria,West Africa,Africa,7.2,7.37,7.28,8.0,7.0,5.0,5.0,7.5,5.5,5.79,NGA
+2023,North Macedonia,Central & Eastern Europe,Europe,5.2,4.87,5.03,5.5,6.0,4.5,6.0,5.0,5.5,5.29,MKD
+2023,Norway,Northern Europe,Europe,3.4,4.1,3.75,5.5,5.0,8.0,8.0,8.5,7.0,7.92,NOR
+2023,Oman,Western Asia,Asia,3.9,4.9,4.4,4.5,6.5,5.0,7.0,6.5,4.5,5.21,OMN
+2023,Pakistan,Southern Asia,Asia,5.8,6.27,6.03,5.0,7.0,3.0,4.5,5.0,4.0,3.96,PAK
+2023,Palau,Micronesia,Oceania,2.5,2.9,2.7,2.5,2.5,5.0,5.5,5.5,5.5,5.33,PLW
+2023,Panama,Caribbean & Central,Americas,7.3,6.67,6.98,6.5,7.5,3.0,4.5,6.0,4.0,4.67,PAN
+2023,Papua New Guinea,Melanesia,Oceania,6.1,5.33,5.72,4.0,9.0,4.5,3.0,5.5,2.5,3.29,PNG
+2023,Paraguay,South America,Americas,8.3,6.73,7.52,7.5,7.5,2.5,2.0,3.5,3.0,3.42,PRY
+2023,Peru,South America,Americas,6.6,6.2,6.4,5.0,5.5,6.5,3.5,6.0,3.0,4.38,PER
+2023,Philippines,South-Eastern Asia,Asia,6.7,6.57,6.63,7.5,8.0,4.5,2.0,5.0,3.5,4.21,PHL
+2023,Poland,Central & Eastern Europe,Europe,4.0,4.97,4.48,5.5,6.0,5.0,6.5,7.0,5.5,5.88,POL
+2023,Portugal,Southern Europe,Europe,5.1,4.67,4.88,5.5,5.0,6.0,7.0,7.0,6.0,6.5,PRT
+2023,Qatar,Western Asia,Asia,5.2,5.7,5.45,7.0,7.5,5.0,5.0,5.0,6.0,5.42,QAT
+2023,Romania,Central & Eastern Europe,Europe,3.9,5.27,4.58,6.0,6.0,6.5,6.0,6.0,6.0,6.0,ROU
+2023,Russia,Central & Eastern Europe,Europe,6.9,6.83,6.87,9.0,8.5,4.0,4.5,6.0,3.5,3.79,RUS
+2023,Rwanda,Central Africa,Africa,3.2,4.0,3.6,4.5,6.0,5.0,7.0,6.0,5.5,5.54,RWA
+2023,Samoa,Polynesia,Oceania,1.9,2.97,2.43,2.5,3.5,6.0,6.5,6.5,6.5,5.83,WSM
+2023,San Marino,Southern Europe,Europe,4.6,2.37,3.48,2.0,7.5,6.5,5.0,5.5,4.5,5.21,SMR
+2023,Sao Tome and Principe,Central Africa,Africa,1.7,1.7,1.7,1.0,3.0,6.0,5.0,7.0,3.0,4.92,STP
+2023,Saudi Arabia,Western Asia,Asia,5.9,6.57,6.23,7.5,8.0,3.0,4.0,4.0,4.5,4.0,SAU
+2023,Senegal,West Africa,Africa,5.5,5.53,5.52,5.0,5.5,5.0,6.0,6.5,5.0,5.79,SEN
+2023,Serbia,Central & Eastern Europe,Europe,6.7,5.73,6.22,5.0,7.0,5.0,5.0,5.0,5.5,4.96,SRB
+2023,Seychelles,Southern Africa,Africa,4.3,3.5,3.9,2.5,4.5,6.0,5.0,5.5,5.0,5.21,SYC
+2023,Sierra Leone,West Africa,Africa,5.3,4.6,4.95,1.5,4.0,3.0,4.0,3.5,4.0,4.04,SLE
+2023,Singapore,South-Eastern Asia,Asia,3.0,3.93,3.47,6.5,6.0,9.0,9.0,8.5,9.0,7.83,SGP
+2023,Slovakia,Central & Eastern Europe,Europe,4.7,4.73,4.72,6.0,6.5,5.0,5.0,6.5,5.0,5.29,SVK
+2023,Slovenia,Central & Eastern Europe,Europe,4.7,4.03,4.37,5.0,6.0,6.0,6.0,7.0,6.0,6.04,SVN
+2023,Solomon Islands,Melanesia,Oceania,5.1,3.7,4.4,1.5,7.0,5.5,6.0,4.5,7.0,5.08,SLB
+2023,Somalia,East Africa,Africa,7.0,5.27,6.13,2.5,7.0,2.0,1.5,2.5,1.5,1.79,SOM
+2023,South Africa,Southern Africa,Africa,7.5,6.87,7.18,7.0,7.5,6.0,4.5,7.0,4.5,5.63,ZAF
+2023,South Sudan,East Africa,Africa,7.5,5.13,6.32,1.0,7.5,2.0,2.0,3.0,1.5,1.88,SSD
+2023,Spain,Southern Europe,Europe,6.1,5.7,5.9,6.0,7.0,7.0,8.0,8.0,5.5,6.75,ESP
+2023,Sri Lanka,Southern Asia,Asia,5.0,4.83,4.92,3.0,4.0,3.0,3.0,5.5,2.0,3.42,LKA
+2023,"St, Kitts and Nevis",Caribbean & Central,Americas,4.2,2.83,3.52,1.5,4.5,7.0,4.5,6.5,4.0,5.0,KNA
+2023,"St, Lucia",Caribbean & Central,Americas,4.4,2.67,3.53,2.0,2.5,6.0,4.5,6.5,6.0,5.58,LCA
+2023,"St, Vincent and the Grenadines",Caribbean & Central,Americas,3.5,2.67,3.08,3.0,2.5,6.0,4.0,6.5,5.5,5.38,VCT
+2023,Sudan,East Africa,Africa,7.5,5.23,6.37,2.5,7.0,3.0,2.5,4.5,2.0,2.71,SDN
+2023,Suriname,South America,Americas,5.0,4.53,4.77,5.0,4.5,3.0,3.0,3.5,5.0,3.04,SUR
+2023,Sweden,Northern Europe,Europe,4.8,4.6,4.7,6.0,6.0,7.0,6.5,7.5,7.5,7.46,SWE
+2023,Switzerland,Western Europe,Europe,5.1,4.63,4.87,7.0,7.5,7.0,7.5,7.0,6.0,7.04,CHE
+2023,Syria,Western Asia,Asia,7.7,6.43,7.07,4.5,8.0,1.5,2.0,2.0,2.0,1.92,SYR
+2023,Tajikistan,Central Asia and the Caucasus,Asia,6.1,4.8,5.45,2.0,6.0,2.0,3.0,2.0,3.0,2.58,TJK
+2023,Tanzania,East Africa,Africa,6.0,6.4,6.2,5.0,5.5,5.0,3.5,5.5,3.0,4.13,TZA
+2023,Thailand,South-Eastern Asia,Asia,5.6,6.77,6.18,6.0,8.0,4.0,5.5,5.5,5.0,4.79,THA
+2023,Timor-Leste,South-Eastern Asia,Asia,4.5,3.67,4.08,2.0,5.5,3.5,4.0,4.0,4.5,3.83,TLS
+2023,Togo,West Africa,Africa,5.7,4.77,5.23,5.0,3.5,4.0,5.0,5.5,5.0,4.5,TGO
+2023,Tonga,Polynesia,Oceania,3.9,3.5,3.7,2.0,4.5,3.5,6.0,6.5,4.0,5.29,TON
+2023,Trinidad and Tobago,Caribbean & Central,Americas,5.6,4.8,5.2,6.0,6.5,3.5,5.5,7.0,5.0,5.33,TTO
+2023,Tunisia,North Africa,Africa,3.9,5.0,4.45,4.0,8.0,3.5,4.5,6.0,3.0,4.5,TUN
+2023,Turkey,Western Asia,Asia,7.3,6.77,7.03,5.0,8.0,2.0,3.0,4.5,3.0,3.38,TUR
+2023,Turkmenistan,Central Asia and the Caucasus,Asia,4.4,4.4,4.4,2.5,5.5,1.5,2.0,2.5,2.0,2.21,TKM
+2023,Tuvalu,Polynesia,Oceania,1.3,1.93,1.62,1.5,2.5,8.0,7.0,6.5,4.5,6.08,TUV
+2023,Uganda,East Africa,Africa,6.7,6.4,6.55,6.0,7.5,4.0,4.0,5.0,4.0,3.88,UGA
+2023,Ukraine,Central & Eastern Europe,Europe,6.7,6.27,6.48,8.5,6.5,4.5,5.0,4.5,4.0,4.54,UKR
+2023,United Arab Emirates,Western Asia,Asia,5.7,7.03,6.37,8.0,9.5,5.5,6.0,5.5,6.5,5.13,ARE
+2023,United Kingdom,Western Europe,Europe,6.0,5.5,5.75,6.5,7.5,8.0,7.5,8.0,7.5,7.54,GBR
+2023,United States,North America,Americas,5.5,5.83,5.67,8.0,7.5,6.0,8.0,6.5,7.0,7.13,USA
+2023,Uruguay,South America,Americas,3.1,3.33,3.22,4.0,4.0,6.0,7.0,7.0,7.0,7.5,URY
+2023,Uzbekistan,Central Asia and the Caucasus,Asia,5.3,4.6,4.95,3.0,6.0,3.0,3.5,4.0,5.5,3.88,UZB
+2023,Vanuatu,Melanesia,Oceania,2.2,2.67,2.43,2.5,3.5,7.0,6.5,6.5,3.5,5.13,VUT
+2023,Venezuela,South America,Americas,7.4,6.03,6.72,3.5,8.0,1.5,1.5,2.0,2.0,1.88,VEN
+2023,Vietnam,South-Eastern Asia,Asia,6.6,6.5,6.55,6.5,7.0,4.0,4.5,6.0,5.0,4.79,VNM
+2023,Yemen,Western Asia,Asia,7.5,5.63,6.57,1.5,8.0,1.5,2.0,2.0,1.0,1.75,YEM
+2023,Zambia,Southern Africa,Africa,5.0,4.47,4.73,4.0,5.0,5.0,4.0,6.5,3.0,4.54,ZMB
+2023,Zimbabwe,Southern Africa,Africa,5.9,5.03,5.47,4.5,5.5,2.5,3.0,3.5,3.5,3.13,ZWE
+2023,eSwatini,Southern Africa,Africa,4.9,3.87,4.38,5.0,5.5,3.0,3.0,3.0,4.0,3.29,SWZ
+2025,Afghanistan,Southern Asia,Asia,7.1,6.93,7.02,4.0,8.0,1.5,1.5,1.5,1.0,1.5,AFG
+2025,Albania,Central & Eastern Europe,Europe,5.5,4.9,5.2,5.5,6.0,5.5,5.5,6.0,5.0,5.17,ALB
+2025,Algeria,North Africa,Africa,4.6,5.33,4.97,4.5,8.0,3.0,6.0,6.5,3.5,4.25,DZA
+2025,Andorra,Western Europe,Europe,3.2,2.2,2.7,2.0,5.5,8.0,8.5,8.5,8.5,8.0,AND
+2025,Angola,Central Africa,Africa,5.9,5.33,5.62,5.5,6.0,3.0,4.0,5.0,4.0,4.21,AGO
+2025,Antigua and Barbuda,Caribbean,Americas,3.5,2.57,3.03,1.5,2.5,3.0,4.5,5.0,5.0,4.67,ATG
+2025,Argentina,South America,Americas,5.5,5.0,5.25,6.0,4.5,5.0,5.5,6.5,5.0,5.67,ARG
+2025,Armenia,Central Asia and the Caucasus,Asia,2.9,3.13,3.02,3.5,3.5,4.5,6.5,6.5,4.5,5.63,ARM
+2025,Australia,Australia and New Zealand,Oceania,3.7,4.43,4.07,8.0,7.0,8.0,8.0,8.0,7.0,7.54,AUS
+2025,Austria,Western Europe,Europe,4.3,4.3,4.3,5.5,6.0,8.0,9.0,8.0,7.5,7.54,AUT
+2025,Azerbaijan,Central Asia and the Caucasus,Asia,5.8,4.27,5.03,3.0,5.5,2.5,4.5,4.0,4.0,3.96,AZE
+2025,Bahamas,Caribbean,Americas,4.1,3.67,3.88,3.0,4.0,4.0,6.5,7.0,6.0,5.58,BHS
+2025,Bahrain,Western Asia,Asia,4.5,5.13,4.82,7.0,7.0,4.0,4.5,5.5,5.5,5.33,BHR
+2025,Bangladesh,Southern Asia,Asia,5.4,5.2,5.3,5.0,5.0,3.0,4.0,5.0,3.0,4.08,BGD
+2025,Barbados,Caribbean,Americas,3.3,2.5,2.9,2.5,2.5,4.5,7.0,7.0,6.0,6.13,BRB
+2025,Belarus,Central & Eastern Europe,Europe,6.3,5.37,5.83,7.0,8.0,2.0,3.0,3.5,4.0,3.08,BLR
+2025,Belgium,Western Europe,Europe,4.1,5.53,4.82,6.5,6.5,6.5,6.5,7.5,7.5,7.17,BEL
+2025,Belize,Central America,Americas,5.4,4.53,4.97,3.5,5.0,4.0,4.0,3.5,4.0,3.58,BLZ
+2025,Benin,West Africa,Africa,5.1,5.2,5.15,3.0,6.0,3.0,4.0,3.0,3.0,3.75,BEN
+2025,Bhutan,Southern Asia,Asia,3.1,3.9,3.5,3.0,3.5,5.0,5.0,5.0,4.0,4.67,BTN
+2025,Bolivia,South America,Americas,5.2,5.03,5.12,4.5,5.0,3.0,4.5,6.0,5.5,4.63,BOL
+2025,Bosnia and Herzegovina,Central & Eastern Europe,Europe,6.4,5.43,5.92,4.0,6.5,2.5,3.5,4.0,4.5,3.88,BIH
+2025,Botswana,Southern Africa,Africa,4.1,4.23,4.17,5.5,6.0,6.0,5.0,7.0,4.5,5.38,BWA
+2025,Brazil,South America,Americas,6.9,7.23,7.07,8.0,8.0,3.5,4.0,5.0,4.0,5.04,BRA
+2025,Brunei,South-Eastern Asia,Asia,2.6,3.2,2.9,4.0,4.5,4.0,5.5,4.5,5.0,4.63,BRN
+2025,Bulgaria,Central & Eastern Europe,Europe,5.7,5.47,5.58,6.0,7.0,5.5,5.0,6.0,5.0,5.33,BGR
+2025,Burkina Faso,West Africa,Africa,6.3,5.77,6.03,4.5,5.5,2.5,3.0,5.5,2.0,2.88,BFA
+2025,Burundi,Central Africa,Africa,4.8,4.67,4.73,1.5,7.5,2.0,1.5,3.0,3.0,2.33,BDI
+2025,Cabo Verde,West Africa,Africa,4.6,3.57,4.08,3.5,4.0,7.5,6.0,7.0,6.5,6.54,CPV
+2025,Cambodia,South-Eastern Asia,Asia,7.3,6.73,7.02,7.5,8.5,3.0,2.5,4.0,3.0,3.46,KHM
+2025,Cameroon,Central Africa,Africa,6.1,6.27,6.18,5.0,6.5,2.5,3.5,4.5,3.0,3.13,CMR
+2025,Canada,North America,Americas,4.2,4.13,4.17,7.0,5.0,7.0,7.5,8.0,6.5,7.38,CAN
+2025,Central African Republic,Central Africa,Africa,8.1,5.97,7.03,3.0,5.5,1.5,2.0,2.5,2.0,2.08,CAF
+2025,Chad,Central Africa,Africa,6.6,5.4,6.0,2.5,4.5,2.0,2.5,3.0,1.5,2.33,TCD
+2025,Chile,South America,Americas,5.6,5.37,5.48,5.5,5.0,5.0,4.5,6.5,6.5,6.17,CHL
+2025,China,Eastern Asia,Asia,6.0,6.63,6.32,8.5,7.5,5.0,6.0,7.0,5.5,5.54,CHN
+2025,Colombia,South America,Americas,8.2,7.43,7.82,7.0,8.0,5.0,4.5,6.5,4.5,5.46,COL
+2025,Comoros,Southern Africa,Africa,4.0,3.67,3.83,2.0,5.5,2.0,2.5,2.5,2.5,2.63,COM
+2025,"Congo, Dem. Rep.",Central Africa,Africa,8.6,6.33,7.47,1.5,8.0,2.5,1.5,3.0,2.0,2.21,COD
+2025,"Congo, Rep.",Central Africa,Africa,5.7,4.37,5.03,2.0,5.0,2.0,4.5,4.0,3.5,3.08,COG
+2025,Costa Rica,Central America,Americas,6.2,5.6,5.9,7.5,6.0,6.0,5.0,6.5,5.0,5.63,CRI
+2025,Croatia,Central & Eastern Europe,Europe,5.2,4.83,5.02,5.0,6.0,5.5,6.0,7.0,6.0,5.92,HRV
+2025,Cuba,Caribbean,Americas,3.3,3.4,3.35,3.0,3.5,3.0,6.0,5.5,6.0,4.96,CUB
+2025,Cyprus,Southern Europe,Europe,4.9,4.1,4.5,4.5,5.5,4.5,5.5,6.0,4.0,4.5,CYP
+2025,Czech Republic,Central & Eastern Europe,Europe,4.3,4.8,4.55,5.5,6.0,6.5,7.0,7.0,6.0,6.5,CZE
+2025,Côte d'Ivoire,West Africa,Africa,5.9,5.67,5.78,4.5,6.5,5.0,5.5,6.0,5.5,5.13,CIV
+2025,Denmark,Northern Europe,Europe,3.9,4.3,4.1,6.5,5.5,7.0,8.0,9.0,8.5,8.21,DNK
+2025,Djibouti,East Africa,Africa,5.2,4.5,4.85,2.0,6.5,3.5,4.0,4.5,4.0,4.08,DJI
+2025,Dominica,Caribbean,Americas,2.2,2.43,2.32,2.0,4.0,5.0,5.5,5.0,6.0,5.29,DMA
+2025,Dominican Republic,Caribbean,Americas,5.0,5.33,5.17,4.0,5.0,3.5,5.0,5.0,5.0,4.92,DOM
+2025,Ecuador,South America,Americas,7.9,7.07,7.48,7.0,7.0,3.0,4.0,5.0,4.0,4.46,ECU
+2025,Egypt,North Africa,Africa,5.4,5.2,5.3,3.0,8.0,2.5,5.0,4.5,2.5,3.75,EGY
+2025,El Salvador,Central America,Americas,5.8,5.1,5.45,6.5,6.5,2.0,3.0,3.5,4.0,3.25,SLV
+2025,Equatorial Guinea,Central Africa,Africa,5.2,3.53,4.37,1.0,7.0,1.5,2.0,3.5,2.0,2.08,GNQ
+2025,Eritrea,East Africa,Africa,3.9,3.93,3.92,1.5,4.0,2.0,2.5,2.5,1.5,2.21,ERI
+2025,Estonia,Northern Europe,Europe,3.8,3.93,3.87,7.0,7.0,8.0,7.5,8.0,8.5,8.04,EST
+2025,Ethiopia,East Africa,Africa,5.9,6.17,6.03,5.5,7.0,5.0,4.0,6.0,5.0,4.5,ETH
+2025,Fiji,Melanesia,Oceania,3.9,4.13,4.02,4.5,5.5,4.0,5.0,6.0,5.5,5.38,FJI
+2025,Finland,Northern Europe,Europe,3.1,3.4,3.25,5.5,4.5,7.5,8.5,8.5,8.0,8.42,FIN
+2025,France,Western Europe,Europe,5.7,6.13,5.92,6.5,6.5,6.5,7.0,7.5,7.5,7.04,FRA
+2025,Gabon,Central Africa,Africa,4.9,4.5,4.7,2.5,6.5,3.0,4.5,4.0,3.5,3.5,GAB
+2025,Gambia,West Africa,Africa,4.7,4.47,4.58,2.0,6.0,4.5,5.0,5.5,4.5,5.13,GMB
+2025,Georgia,Central Asia and the Caucasus,Asia,3.9,3.83,3.87,5.0,5.5,3.0,6.5,6.5,5.5,5.0,GEO
+2025,Germany,Western Europe,Europe,5.3,5.4,5.35,7.0,7.5,8.0,7.5,7.5,7.5,7.42,DEU
+2025,Ghana,West Africa,Africa,5.5,6.03,5.77,5.0,6.5,5.0,4.5,5.5,4.0,5.33,GHA
+2025,Greece,Southern Europe,Europe,6.2,4.9,5.55,4.5,6.5,4.5,5.0,6.0,5.0,5.13,GRC
+2025,Grenada,Caribbean,Americas,3.0,2.43,2.72,2.0,3.0,4.0,6.5,5.5,4.0,5.17,GRD
+2025,Guatemala,Central America,Americas,7.3,6.23,6.77,5.0,7.0,3.5,5.5,4.5,4.0,4.0,GTM
+2025,Guinea,West Africa,Africa,5.2,4.9,5.05,2.0,5.5,3.0,3.0,3.0,3.0,2.96,GIN
+2025,Guinea-Bissau,West Africa,Africa,5.6,4.17,4.88,2.0,6.0,3.0,3.0,3.0,2.0,2.67,GNB
+2025,Guyana,South America,Americas,6.4,5.17,5.78,2.5,8.0,4.0,3.5,3.5,5.0,4.25,GUY
+2025,Haiti,Caribbean,Americas,6.8,6.27,6.53,3.0,8.0,2.0,1.5,4.0,2.0,2.21,HTI
+2025,Honduras,Central America,Americas,8.1,6.1,7.1,6.5,7.5,3.0,5.0,4.5,4.5,3.92,HND
+2025,Hungary,Central & Eastern Europe,Europe,4.7,4.53,4.62,5.5,6.5,5.0,5.0,5.5,6.0,4.79,HUN
+2025,Iceland,Northern Europe,Europe,3.1,2.97,3.03,5.5,5.0,8.0,9.0,8.5,8.0,8.17,ISL
+2025,India,Southern Asia,Asia,5.0,6.8,5.9,7.5,7.5,4.5,5.5,5.5,5.0,5.46,IND
+2025,Indonesia,South-Eastern Asia,Asia,7.1,6.6,6.85,7.5,8.0,3.5,4.0,5.0,4.0,4.29,IDN
+2025,Iran,Western Asia,Asia,6.4,7.37,6.88,8.5,9.0,3.0,3.0,4.0,3.0,3.08,IRN
+2025,Iraq,Western Asia,Asia,7.9,6.43,7.17,3.0,9.0,3.5,3.5,3.5,3.0,3.33,IRQ
+2025,Ireland,Western Europe,Europe,4.8,5.13,4.97,6.0,6.0,7.0,7.5,8.0,6.0,7.42,IRL
+2025,Israel,Western Asia,Asia,4.9,5.23,5.07,9.0,7.0,4.0,5.5,6.5,6.5,5.54,ISR
+2025,Italy,Southern Europe,Europe,6.9,5.83,6.37,6.0,7.0,5.5,8.0,7.5,6.0,6.38,ITA
+2025,Jamaica,Caribbean,Americas,6.8,5.07,5.93,5.0,7.0,4.0,5.5,5.5,6.5,5.33,JAM
+2025,Japan,Eastern Asia,Asia,4.6,3.9,4.25,4.5,6.5,8.0,7.5,7.5,6.0,7.5,JPN
+2025,Jordan,Western Asia,Asia,5.2,4.97,5.08,5.5,6.5,4.5,6.5,6.5,6.5,5.63,JOR
+2025,Kazakhstan,Central Asia and the Caucasus,Asia,4.4,4.5,4.45,4.0,6.0,5.0,4.5,5.5,4.5,4.67,KAZ
+2025,Kenya,East Africa,Africa,7.1,7.27,7.18,8.0,8.0,5.5,5.0,7.0,3.5,5.17,KEN
+2025,Kiribati,Micronesia,Oceania,2.3,2.37,2.33,2.0,4.0,4.0,5.0,6.0,3.0,4.46,KIR
+2025,"Korea, DPR",Eastern Asia,Asia,3.9,5.47,4.68,9.0,8.0,1.0,1.5,2.0,1.0,1.63,PRK
+2025,"Korea, Rep.",Eastern Asia,Asia,5.2,3.63,4.42,4.5,4.5,8.5,8.0,9.0,8.0,8.0,KOR
+2025,Kuwait,Western Asia,Asia,4.6,5.6,5.1,7.0,7.0,5.5,6.0,5.5,5.5,5.42,KWT
+2025,Kyrgyzstan,Central Asia and the Caucasus,Asia,5.6,4.9,5.25,3.0,6.5,3.0,3.5,4.0,5.0,3.79,KGZ
+2025,Laos,South-Eastern Asia,Asia,6.4,6.33,6.37,5.5,8.0,3.0,4.0,4.0,3.5,3.38,LAO
+2025,Latvia,Northern Europe,Europe,3.7,4.47,4.08,6.0,6.5,8.0,7.5,8.5,7.5,7.63,LVA
+2025,Lebanon,Western Asia,Asia,8.0,6.6,7.3,4.5,9.0,3.0,2.5,3.5,3.5,3.08,LBN
+2025,Lesotho,Southern Africa,Africa,5.3,3.73,4.52,2.0,5.0,3.0,3.0,4.5,3.5,3.92,LSO
+2025,Liberia,West Africa,Africa,6.0,5.3,5.65,4.0,7.5,3.5,4.0,4.0,2.0,3.38,LBR
+2025,Libya,North Africa,Africa,7.4,6.7,7.05,3.5,9.0,1.5,2.0,2.0,1.5,1.88,LBY
+2025,Liechtenstein,Western Europe,Europe,2.0,2.2,2.1,4.0,7.0,9.0,8.5,8.5,8.5,8.42,LIE
+2025,Lithuania,Northern Europe,Europe,4.1,4.07,4.08,5.5,6.0,7.5,7.5,7.5,6.5,7.38,LTU
+2025,Luxembourg,Western Europe,Europe,2.7,2.8,2.75,4.5,7.0,7.5,7.0,7.5,7.5,7.5,LUX
+2025,Madagascar,Southern Africa,Africa,6.2,5.47,5.83,2.0,6.0,2.5,3.5,3.5,4.0,3.25,MDG
+2025,Malawi,Southern Africa,Africa,3.8,4.53,4.17,2.5,7.0,5.0,3.5,5.5,4.0,4.42,MWI
+2025,Malaysia,South-Eastern Asia,Asia,6.5,6.57,6.53,8.0,8.0,5.0,5.5,7.5,6.0,5.71,MYS
+2025,Maldives,Southern Asia,Asia,5.3,3.53,4.42,3.5,4.0,3.0,4.0,5.0,3.5,3.96,MDV
+2025,Mali,West Africa,Africa,6.3,6.37,6.33,4.0,7.0,2.0,2.0,2.5,2.0,2.08,MLI
+2025,Malta,Southern Europe,Europe,5.6,4.13,4.87,5.5,8.0,4.5,5.0,6.0,4.0,5.08,MLT
+2025,Marshall Islands,Micronesia,Oceania,2.2,2.37,2.28,1.5,3.5,6.5,5.5,6.0,4.5,5.67,MHL
+2025,Mauritania,North Africa,Africa,4.3,4.5,4.4,1.5,6.5,2.5,3.0,3.5,2.5,3.25,MRT
+2025,Mauritius,Southern Africa,Africa,4.3,4.17,4.23,4.0,5.5,6.0,5.5,6.0,5.0,5.58,MUS
+2025,Mexico,Central America,Americas,7.1,8.27,7.68,8.0,8.5,4.0,5.0,5.5,4.0,4.5,MEX
+2025,Micronesia (Federated States of),Micronesia,Oceania,2.9,2.53,2.72,1.5,2.5,6.0,6.5,6.0,5.0,5.54,FSM
+2025,Moldova,Central & Eastern Europe,Europe,6.1,4.97,5.53,7.5,8.0,3.5,4.0,5.5,3.5,4.08,MDA
+2025,Monaco,Southern Europe,Europe,3.5,1.67,2.58,2.5,3.5,8.0,7.0,7.0,5.5,5.83,MCO
+2025,Mongolia,Eastern Asia,Asia,4.2,3.87,4.03,6.0,5.0,4.5,5.0,6.5,6.0,5.29,MNG
+2025,Montenegro,Central & Eastern Europe,Europe,6.5,5.13,5.82,5.0,6.0,4.5,4.5,5.0,5.0,4.83,MNE
+2025,Morocco,North Africa,Africa,5.2,5.53,5.37,4.5,7.5,4.0,5.5,6.5,4.0,4.67,MAR
+2025,Mozambique,Southern Africa,Africa,6.9,6.37,6.63,3.5,7.0,2.0,2.0,5.5,3.0,3.25,MOZ
+2025,Myanmar,South-Eastern Asia,Asia,8.5,7.67,8.08,7.5,8.5,1.5,1.5,2.0,1.0,1.46,MMR
+2025,Namibia,Southern Africa,Africa,4.7,4.17,4.43,5.5,5.0,4.0,3.5,6.5,4.0,4.58,NAM
+2025,Nauru,Micronesia,Oceania,1.9,1.53,1.72,1.0,2.5,6.5,5.0,7.0,1.0,4.83,NRU
+2025,Nepal,Southern Asia,Asia,7.2,6.07,6.63,4.0,7.0,3.0,4.5,4.5,3.5,3.88,NPL
+2025,Netherlands,Western Europe,Europe,5.0,5.33,5.17,7.0,6.0,7.0,7.0,7.5,8.0,7.42,NLD
+2025,New Zealand,Australia and New Zealand,Oceania,4.4,3.87,4.13,7.0,7.0,8.0,7.5,8.0,7.5,7.88,NZL
+2025,Nicaragua,Central America,Americas,6.2,5.27,5.73,3.5,4.0,1.5,2.0,3.0,3.0,2.0,NIC
+2025,Niger,West Africa,Africa,6.0,5.87,5.93,1.0,6.5,2.0,3.5,4.5,2.5,2.96,NER
+2025,Nigeria,West Africa,Africa,7.3,7.33,7.32,6.5,8.0,4.5,5.5,7.0,5.5,5.46,NGA
+2025,North Macedonia,Central & Eastern Europe,Europe,5.2,4.8,5.0,5.5,6.0,4.5,5.5,5.0,5.5,5.29,MKD
+2025,Norway,Northern Europe,Europe,3.5,4.17,3.83,5.5,5.5,8.0,7.5,8.5,7.5,7.92,NOR
+2025,Oman,Western Asia,Asia,4.0,4.9,4.45,5.0,6.5,4.5,7.0,6.5,5.0,5.33,OMN
+2025,Pakistan,Southern Asia,Asia,6.1,6.53,6.32,5.0,7.0,3.0,4.5,5.0,4.0,3.96,PAK
+2025,Palau,Micronesia,Oceania,2.9,2.77,2.83,3.0,3.0,5.0,5.0,5.5,5.0,5.08,PLW
+2025,Panama,Central America,Americas,7.3,6.57,6.93,7.0,7.5,3.0,4.5,6.0,4.5,4.71,PAN
+2025,Papua New Guinea,Melanesia,Oceania,6.1,5.47,5.78,4.0,8.5,3.5,3.0,5.5,2.5,3.21,PNG
+2025,Paraguay,South America,Americas,8.3,6.67,7.48,6.5,7.5,2.5,2.0,3.5,3.5,3.29,PRY
+2025,Peru,South America,Americas,6.9,6.33,6.62,5.0,6.0,6.0,4.0,6.0,3.5,4.46,PER
+2025,Philippines,South-Eastern Asia,Asia,6.7,6.43,6.57,7.5,8.0,4.5,3.0,5.5,4.5,4.46,PHL
+2025,Poland,Central & Eastern Europe,Europe,4.2,5.13,4.67,6.0,6.0,5.0,6.5,7.0,6.0,6.08,POL
+2025,Portugal,Southern Europe,Europe,5.2,4.73,4.97,5.5,5.0,6.0,7.0,7.0,6.0,6.58,PRT
+2025,Qatar,Western Asia,Asia,5.1,5.63,5.37,6.5,7.5,4.5,5.0,5.0,6.0,5.46,QAT
+2025,Romania,Central & Eastern Europe,Europe,4.3,5.37,4.83,6.0,6.5,6.5,6.0,6.0,6.0,5.88,ROU
+2025,Russia,Central & Eastern Europe,Europe,6.9,6.93,6.92,9.0,8.5,3.0,4.0,5.5,3.0,3.42,RUS
+2025,Rwanda,Central Africa,Africa,3.6,4.13,3.87,4.5,6.5,4.5,5.5,6.0,5.5,5.0,RWA
+2025,Samoa,Polynesia,Oceania,2.2,2.57,2.38,3.0,3.5,5.5,6.5,6.5,6.5,5.88,WSM
+2025,San Marino,Southern Europe,Europe,4.2,2.03,3.12,1.5,7.0,6.5,5.0,5.5,4.5,5.29,SMR
+2025,Sao Tome and Principe,Central Africa,Africa,1.7,1.9,1.8,1.0,2.5,6.0,4.5,7.0,3.0,4.79,STP
+2025,Saudi Arabia,Western Asia,Asia,6.0,6.67,6.33,7.5,8.5,2.5,3.5,4.0,4.5,3.79,SAU
+2025,Senegal,West Africa,Africa,5.1,5.33,5.22,5.0,6.0,5.0,6.0,6.5,5.0,5.88,SEN
+2025,Serbia,Central & Eastern Europe,Europe,6.7,5.67,6.18,5.0,7.0,5.0,5.0,4.5,5.5,4.92,SRB
+2025,Seychelles,Southern Africa,Africa,3.9,3.4,3.65,2.0,5.5,6.0,5.0,5.5,5.0,5.38,SYC
+2025,Sierra Leone,West Africa,Africa,5.9,4.93,5.42,2.5,5.0,3.0,4.5,4.0,4.5,4.04,SLE
+2025,Singapore,South-Eastern Asia,Asia,3.4,4.03,3.72,7.0,6.0,8.5,9.0,8.5,9.0,7.79,SGP
+2025,Slovakia,Central & Eastern Europe,Europe,4.8,4.7,4.75,6.0,6.5,4.5,4.5,6.0,5.0,4.88,SVK
+2025,Slovenia,Central & Eastern Europe,Europe,4.6,3.97,4.28,5.0,6.5,6.0,6.0,7.0,6.0,6.21,SVN
+2025,Solomon Islands,Melanesia,Oceania,5.4,3.6,4.5,1.5,7.0,5.0,5.5,4.5,6.5,4.71,SLB
+2025,Somalia,East Africa,Africa,7.5,5.6,6.55,2.5,7.0,2.0,1.5,2.5,1.5,1.88,SOM
+2025,South Africa,Southern Africa,Africa,7.7,7.17,7.43,8.0,7.5,6.0,4.5,7.0,4.5,5.67,ZAF
+2025,South Sudan,East Africa,Africa,7.5,5.33,6.42,2.0,7.5,2.0,2.0,3.0,1.5,2.04,SSD
+2025,Spain,Southern Europe,Europe,6.2,5.9,6.05,6.5,7.0,7.0,8.0,8.0,5.5,6.67,ESP
+2025,Sri Lanka,Southern Asia,Asia,5.1,4.83,4.97,3.5,4.5,3.0,3.5,5.5,2.0,3.71,LKA
+2025,St. Kitts and Nevis,Caribbean,Americas,3.6,2.6,3.1,1.5,4.5,7.0,5.0,6.5,4.5,5.38,KNA
+2025,St. Lucia,Caribbean,Americas,4.1,2.6,3.35,2.0,2.5,6.0,4.5,6.5,6.0,5.54,LCA
+2025,St. Vincent and the Grenadines,Caribbean,Americas,3.2,2.53,2.87,3.0,2.5,6.0,4.5,6.5,5.5,5.42,VCT
+2025,Sudan,East Africa,Africa,7.6,5.67,6.63,3.0,7.5,2.5,2.0,4.5,1.5,2.25,SDN
+2025,Suriname,South America,Americas,5.3,4.5,4.9,4.0,5.0,3.5,3.0,3.0,4.5,3.17,SUR
+2025,Sweden,Northern Europe,Europe,4.8,4.67,4.73,6.5,6.5,7.0,6.0,8.0,7.0,7.38,SWE
+2025,Switzerland,Western Europe,Europe,4.5,4.8,4.65,7.0,7.5,6.5,7.5,7.0,6.5,7.25,CHE
+2025,Syria,Western Asia,Asia,7.6,6.37,6.98,4.0,8.0,1.5,2.0,2.0,2.0,2.0,SYR
+2025,Tajikistan,Central Asia and the Caucasus,Asia,6.0,4.73,5.37,2.0,6.5,2.0,3.0,2.0,2.5,2.54,TJK
+2025,Tanzania,East Africa,Africa,5.6,6.27,5.93,5.0,6.0,5.0,4.0,6.0,3.0,4.17,TZA
+2025,Thailand,South-Eastern Asia,Asia,5.9,6.83,6.37,6.5,8.0,4.0,5.5,6.0,5.0,4.96,THA
+2025,Timor-Leste,South-Eastern Asia,Asia,4.5,3.47,3.98,2.5,5.5,3.5,4.0,4.0,4.5,3.88,TLS
+2025,Togo,West Africa,Africa,5.8,4.63,5.22,3.0,4.0,4.0,5.0,5.5,5.0,4.42,TGO
+2025,Tonga,Polynesia,Oceania,3.8,3.03,3.42,2.5,4.0,3.5,6.0,6.5,4.0,5.17,TON
+2025,Trinidad and Tobago,Caribbean,Americas,5.5,4.93,5.22,6.5,6.5,3.5,4.0,7.0,5.0,5.08,TTO
+2025,Tunisia,North Africa,Africa,4.2,5.17,4.68,4.0,8.0,3.0,5.0,6.0,3.0,4.33,TUN
+2025,Turkey,Western Asia,Asia,7.5,6.9,7.2,5.5,8.5,3.0,3.5,5.0,3.5,3.96,TUR
+2025,Turkmenistan,Central Asia and the Caucasus,Asia,4.3,4.4,4.35,2.5,6.5,1.5,2.0,2.5,2.0,2.17,TKM
+2025,Tuvalu,Polynesia,Oceania,1.4,1.67,1.53,1.0,2.0,8.0,7.0,6.5,4.0,5.92,TUV
+2025,Uganda,East Africa,Africa,6.8,6.5,6.65,6.0,7.5,4.0,3.0,5.0,4.0,3.67,UGA
+2025,Ukraine,Central & Eastern Europe,Europe,6.5,6.4,6.45,8.5,7.0,4.5,5.0,4.5,4.0,4.54,UKR
+2025,United Arab Emirates,Western Asia,Asia,5.7,7.0,6.35,8.0,9.0,5.5,6.0,5.5,6.5,5.13,ARE
+2025,United Kingdom,Western Europe,Europe,6.1,5.63,5.87,7.0,7.5,7.5,7.5,8.0,8.0,7.63,GBR
+2025,United States,North America,Americas,5.6,6.13,5.87,8.0,8.0,6.0,8.0,6.5,7.0,6.96,USA
+2025,Uruguay,South America,Americas,3.6,3.53,3.57,4.5,4.0,6.0,7.5,7.0,6.5,7.46,URY
+2025,Uzbekistan,Central Asia and the Caucasus,Asia,5.3,4.57,4.93,3.0,6.0,3.0,3.5,4.0,4.5,3.83,UZB
+2025,Vanuatu,Melanesia,Oceania,2.2,2.47,2.33,2.5,3.5,6.5,6.5,6.0,3.0,4.88,VUT
+2025,Venezuela,South America,Americas,7.5,6.43,6.97,4.5,8.0,1.5,1.5,2.0,2.0,1.88,VEN
+2025,Vietnam,South-Eastern Asia,Asia,6.6,6.57,6.58,7.0,7.0,3.5,5.0,6.0,5.0,4.79,VNM
+2025,Yemen,Western Asia,Asia,7.5,5.77,6.63,2.5,8.0,1.5,2.0,2.0,1.5,1.92,YEM
+2025,Zambia,Southern Africa,Africa,5.0,4.57,4.78,4.0,5.5,5.0,4.0,6.5,4.0,4.67,ZMB
+2025,Zimbabwe,Southern Africa,Africa,5.9,5.2,5.55,4.5,6.5,2.0,2.5,3.5,4.0,3.04,ZWE
+2025,eSwatini,Southern Africa,Africa,4.7,3.8,4.25,5.0,6.0,3.0,3.0,3.0,4.0,3.21,SWZ

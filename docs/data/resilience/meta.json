@@ -95,7 +95,7 @@
  },
  "provenance": {
   "script": "biv_web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "python": "3.13.18",
   "input": {
    "file": "data/bivariate.gpkg",
@@ -125,6 +125,6 @@
     "dir": "docs/data/resilience"
    }
   },
-  "created_utc": "2026-11-05T10:11:55+00:00"
+  "created_utc": "2026-11-14T21:08:09+00:00"
  }
 }

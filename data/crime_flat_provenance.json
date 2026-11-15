@@ -1,0 +1,87 @@
+{
+  "tool": "crime_flat",
+  "script_version": "1.0.1",
+  "run_utc": "2026-10-16T16:40:40+00:00",
+  "python": "3.13.16",
+  "pandas": "3.0.5",
+  "config": {
+    "path": "config.toml",
+    "sha256": "14c27a24bc8d0efe42e19424cda9ad9cc21da5468d3d8bcf54441ef4abda26ed"
+  },
+  "inputs": [
+    {
+      "file": "global_oc_index.xlsx",
+      "sha256": "0bdfe8943de5a82bd4f709f92c91c596de5c60a192dca463bc722d88be7b55f5"
+    },
+    {
+      "file": "Gallup_Global-Safety-Report-2025.pdf",
+      "sha256": "dae0529eaff9e68eb4dd9bf43935c4364f3471eebfa8597ddc0c06b17bb4e9ec"
+    },
+    {
+      "file": "ne_50m_admin_0_countries_v5.1.2.geojson",
+      "sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "gitoc_long",
+      "file": "gitoc_oc_index_long.csv",
+      "sha256": "84aae6161d2f19e264238186051cc941f3f14c3346f405568286e11a51b4ec1c"
+    },
+    {
+      "name": "gitoc_wide",
+      "file": "gitoc_oc_index_wide.csv",
+      "sha256": "95112c7ce4548428b2aa3c196c6824c555dc04456b2a8548768000b7eecc36eb"
+    },
+    {
+      "name": "gallup",
+      "file": "gallup_safety_2025.csv",
+      "sha256": "ea6b063ddcd0df621ed85834edeef6d70f8cd875605caca7138f95a184fcf5c4"
+    },
+    {
+      "name": "gpkg",
+      "file": "crime_safety_countries.gpkg",
+      "sha256": "b38b5b8aa54a57020757c4f76d919cfb1c26b14617cb99e2b2b6ceef2ea5c732"
+    }
+  ],
+  "row_counts": {
+    "gitoc_long": 19686,
+    "gitoc_wide": 579,
+    "gallup": 144
+  },
+  "checks": {
+    "gitoc": {
+      "countries_per_year": {
+        "2021": 193,
+        "2023": 193,
+        "2025": 193
+      },
+      "unmatched": [],
+      "duplicates": 0
+    },
+    "gallup": {
+      "rows_per_metric": {
+        "safe_walking_night_pct": 144,
+        "law_and_order_index": 108
+      },
+      "safe_walking_matches_expected": true,
+      "economies_after_merge": 144,
+      "unmatched": []
+    },
+    "gis": {
+      "countries_features": 239,
+      "areas_without_iso3": [
+        "Siachen Glacier",
+        "Somaliland"
+      ],
+      "codes_without_polygon": []
+    }
+  },
+  "notes": [
+    "GI-TOC Global Organized Crime Index: expert assessments, scores 1-10, 193 UN member states; criminality (markets + actors) higher = worse, resilience higher = better. Cyber-dependent crimes indicator exists from the 2023 edition.",
+    "Gallup Global Safety Report 2025 (fieldwork 2024): law_and_order_index (0-100) and safe_walking_night_pct, parsed from the report's country tables.",
+    "GI-TOC data: CC BY 4.0 (reuse and adaptation allowed with attribution). Cite: Global Initiative Against Transnational Organized Crime (2025), Global Organized Crime Index 2025.",
+    "Gallup: no reuse terms stated in the report; check with Gallup before redistributing its figures.",
+    "Boundaries: Natural Earth v5.1.2, 1:50m admin 0 countries."
+  ]
+}

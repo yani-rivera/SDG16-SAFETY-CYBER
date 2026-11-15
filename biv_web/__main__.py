@@ -1,14 +1,49 @@
-"""Usage: python -m biv_web config.toml"""
+"""Usage: python -m biv_web config.toml
+
+config with  mode = "explore"  -> every variable for every country (the page pairs any two)
+any other config               -> one fixed pair from a `bivariate` GeoPackage (pair.html)
+"""
 import json, sys, tomllib
 from pathlib import Path
 from .gpkg import read_layer
 from .build import features, breaks, palette
-from .provenance import record
+from .provenance import record, sha256
+from . import explore
+from .csp import stamp
+
+
+def run_explore(cfg, base):
+    src = base / cfg["input"]["gpkg"]
+    out = base / cfg["output"]["dir"]
+    out.mkdir(parents=True, exist_ok=True)
+    recs, srs = read_layer(src, cfg["input"]["layer"])
+    fc, doc = explore.build(cfg, base, recs)
+    meta = {"crs": f"EPSG:{srs}", "n_countries": len(fc["features"]),
+            "variables": {v["key"]: {"n": v["n"], "breaks": v["breaks"]} for v in doc["variables"]},
+            "tables": {name: {"file": t["file"], "sha256": sha256(base / t["file"]), "where": t.get("where")}
+                       for name, t in cfg["tables"].items()},
+            "upstream": doc["upstream"], "checks": doc["checks"],
+            "provenance": record(src, cfg)}
+    doc["build"] = {"script": meta["provenance"]["script"], "version": meta["provenance"]["version"],
+                    "created_utc": meta["provenance"]["created_utc"], "crs": meta["crs"]}
+    for name, obj, indent in (("countries.geojson", fc, None), ("variables.json", doc, None), ("meta.json", meta, 1)):
+        with open(out / name, "w", encoding="utf-8") as f:
+            json.dump(obj, f, ensure_ascii=False, indent=indent, separators=None if indent else (",", ":"))
+    page = base / cfg["output"].get("page", "docs/index.html")
+    if page.exists():
+        stamp(page)          # the page's security policy carries a hash of its script
+    print(f"{len(fc['features'])} countries, {len(doc['variables'])} variables, CRS EPSG:{srs} -> {out}")
+    for v in doc["variables"]:
+        print(f"  {v['key']:32s} n={v['n']:3d}  breaks {v['breaks']}")
+    if doc["checks"]["codes_without_polygon"]:
+        print("WARNING: codes without a polygon:", doc["checks"]["codes_without_polygon"])
 
 
 def run(cfg_path):
     base = Path(cfg_path).parent
     cfg = tomllib.loads(Path(cfg_path).read_text())
+    if cfg.get("mode") == "explore":
+        return run_explore(cfg, base)
     src = base / cfg["input"]["gpkg"]
     out = base / cfg["output"]["dir"]
     out.mkdir(parents=True, exist_ok=True)
